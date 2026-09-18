@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DINEIX — design, tecnologia e direção para marcas que querem uma só voz." />
+  <title>DINEIX — Design, tecnologia e intenção</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Instrument+Sans:wght@400..600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app-shell" id="app-shell" data-dark="false">
+
+  <div class="toast-viewport" id="toast-viewport" aria-live="polite"></div>
+
+  <header class="site-header" id="site-header">
+    <div class="site-header-inner">
+      <button class="brand-mark" data-scroll="inicio" aria-label="Voltar ao início">DINEI<span>XAVIER</span></button>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <button data-scroll="portfolio">Portfólio</button>
+        <button data-scroll="servicos">Serviços</button>
+        <button data-scroll="processo">Processo</button>
+        <button data-scroll="contato">Contato</button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" hidden><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span id="theme-label">Canvas</span>
+        </button>
+        <button class="header-cta" id="nav-cta-guided">
+          Começar um projeto
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Abrir menu">
+          <svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="icon icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" hidden><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" hidden>
+      <button data-scroll="portfolio">Portfólio</button>
+      <button data-scroll="servicos">Serviços</button>
+      <button data-scroll="processo">Como funciona</button>
+      <button data-scroll="contato">Contato</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <span class="section-kicker">Estúdio independente · Juiz de Fora, MG</span>
+          <h1>Ideias com <em>uma só voz</em>, em qualquer lugar que sua marca aparecer.</h1>
+          <p class="hero-lead">Sou o Dinei Xavier. Uno design, tecnologia e direção para criar sites, identidades, aplicativos e vídeos que fazem sentido para quem vê — e para quem usa.</p>
+          <div class="hero-actions">
+            <button class="button-primary" data-scroll="portfolio">
+              Explorar projetos
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+            </button>
+            <button class="text-action" id="hero-cta-guided">
+              Iniciar experiência guiada
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </button>
+          </div>
+          <div class="hero-meta">
+            <div><span class="status-dot"></span>Disponível para novos projetos</div>
+            <span>01—26</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal" style="transition-delay:.20s">
+          <div class="visual-frame">
+            <img src="https://images.pexels.com/photos/326514/pexels-photo-326514.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Computador mostrando uma composição visual em um estúdio">
+            <div class="visual-overlay">
+              <span>Direção visual / 2026</span>
+              <span>01</span>
+            </div>
+          </div>
+          <div class="hero-note">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2 2M16 16l2 2M18 6l-2 2M8 16l-2 2"/></svg>
+            Um estúdio só para juntar as partes que fazem sua marca ser lembrada.
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom-line">
+        <span>Sites</span><span>Identidade visual</span><span>Aplicativos</span><span>Vídeo</span>
+        <span class="line-fill"></span>
+      </div>
+    </section>
+
+    <!-- INTRO STRIP -->
+    <section class="intro-strip">
+      <div class="intro-statement reveal">
+        <span class="statement-mark">✳</span>
+        <p>Não é sobre fazer mais uma peça. É sobre construir uma linguagem que continue reconhecível quando o formato mudar.</p>
+      </div>
+      <div class="intro-facts reveal" style="transition-delay:.12s">
+        <div><span>5</span> frentes de criação</div>
+        <div><span>1</span> contato do início ao fim</div>
+        <div><span>∞</span> espaço para ideias</div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section class="portfolio-section section-shell" id="portfolio">
+      <div class="section-heading-row">
+        <div class="reveal">
+          <span class="section-kicker">// portfólio selecionado</span>
+          <h2>Como fica<br><em>na prática.</em></h2>
+        </div>
+        <div class="section-heading-aside reveal" style="transition-delay:.4s">
+          <p>Cada projeto começa com uma pergunta diferente. O trabalho é encontrar a forma mais simples, bonita e honesta de respondê-la.</p>
+          <button class="text-action" id="portfolio-all-link">
+            Ver todos os projetos
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="category-tabs" role="tablist" aria-label="Categorias do portfólio">
+        <button class="is-active" data-category="all" role="tab" aria-selected="true">Tudo</button>
+        <button data-category="sites" role="tab" aria-selected="false">Sites</button>
+        <button data-category="identidade" role="tab" aria-selected="false">Identidade</button>
+        <button data-category="apps" role="tab" aria-selected="false">Apps</button>
+        <button data-category="video" role="tab" aria-selected="false">Vídeo</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolio-grid">
+
+        <div class="portfolio-card-wrap portfolio-card-1 reveal" data-category="sites">
+          <button class="portfolio-card"
+            data-title="DXavier Minis" data-category-label="Sites & Landing Pages"
+            data-summary="Uma vitrine digital com ritmo de galeria para um ateliê de pintura em miniatura."
+            data-outcome="presença digital + direção de arte" data-number="01"
+            data-image="imagens/site dxavierrminis.png"
+            data-alt="site dxavierminis.com">
+            <div class="portfolio-image">
+              <img src="imagens/site dxavierrminis.png" alt="site dxavierminis">
+              <span class="portfolio-number">01</span>
+              <span class="portfolio-open"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <div class="portfolio-card-info">
+              <div><span class="card-eyebrow">Sites & Landing Pages</span><h3> <a href="https://www.dxavierminis.com.br" target="_blank">dxavierminis.com.br</a></h3></div>
+              <p>presença digital + direção de arte</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="portfolio-card-wrap portfolio-card-2 reveal" data-category="sites" style="transition-delay:.05s">
+          <button class="portfolio-card"
+            data-title="Raiz Coletiva" data-category-label="Sites & Landing Pages"
+            data-summary="Campanha de reflorestamento urbano que organiza uma causa em uma ação clara."
+            data-outcome="narrativa + conversão" data-number="02"
+            data-image="imagens/imagem02.png"
+            data-alt="Wireframe desenhado à mão sobre uma mesa">
+            <div class="portfolio-image">
+              <img src="imagens/imagem02.png" alt="raiz coletiva">
+              <span class="portfolio-number">02</span>
+              <span class="portfolio-open"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <div class="portfolio-card-info">
+              <div><span class="card-eyebrow">Sites & Landing Pages</span><h3> <a href="files/RAIZ_COLETIVA.html" target="_blank">raizcoletiva.com</a></h3></div>
+              <p>narrativa + conversão</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="portfolio-card-wrap portfolio-card-3 reveal" data-category="identidade" style="transition-delay:.1s">
+          <button class="portfolio-card"
+            data-title="Chroma Atelier" data-category-label="Identidade Visual"
+            data-summary="Sistema de marca para um universo artesanal que precisava de cor, textura e direção."
+            data-outcome="identidade + campanha" data-number="03"
+            data-image="imagens/imagem04.jpg"
+            data-alt="Mesa de trabalho com materiais de criação e paleta de cores">
+            <div class="portfolio-image">
+              <img src="imagens/imagem04.jpg" alt="Mesa de trabalho com materiais de criação e paleta de cores">
+              <span class="portfolio-number">03</span>
+              <span class="portfolio-open"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <div class="portfolio-card-info">
+              <div><span class="card-eyebrow">Identidade Visual</span><h3>Chroma Atelier</h3></div>
+              <p>identidade + campanha</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="portfolio-card-wrap portfolio-card-4 reveal" data-category="apps" style="transition-delay:.15s">
+          <button class="portfolio-card"
+            data-title="Produto digital sob medida" data-category-label="Aplicativos"
+            data-summary="Uma experiência mobile que transforma uma ideia em fluxo simples e possível de usar."
+            data-outcome="UX + protótipo navegável" data-number="04"
+            data-image="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=85"
+            data-alt="Smartphone exibindo uma interface de aplicativo">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1400&q=85" alt="Smartphone exibindo uma interface de aplicativo">
+              <span class="portfolio-number">04</span>
+              <span class="portfolio-open"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <div class="portfolio-card-info">
+              <div><span class="card-eyebrow">Aplicativos</span><h3>Produto digital sob medida</h3></div>
+              <p>UX + protótipo navegável</p>
+            </div>
+          </button>
+        </div>
+
+        <div class="portfolio-card-wrap portfolio-card-5 reveal" data-category="video" style="transition-delay:.2s">
+          <button class="portfolio-card"
+            data-title="Filme de campanha" data-category-label="Vídeo"
+            data-summary="Edição com cadência editorial para apresentar uma marca sem parecer um anúncio."
+            data-outcome="edição + direção de ritmo" data-number="05"
+            data-image="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=85"
+            data-alt="Sala de cinema com tela iluminada">
+            <div class="portfolio-image">
+              <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=85" alt="Sala de cinema com tela iluminada">
+              <span class="portfolio-number">05</span>
+              <span class="portfolio-open"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+            <div class="portfolio-card-info">
+              <div><span class="card-eyebrow">Vídeo</span><h3>Filme de campanha</h3></div>
+              <p>edição + direção de ritmo</p>
+            </div>
+          </button>
+        </div>
+
+      </div>
+      <div class="portfolio-footnote">Projetos demonstrativos e trabalhos selecionados <span>·</span> referências reais em construção</div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="services-section section-shell" id="servicos">
+      <div class="section-heading-row services-heading">
+        <div class="reveal">
+          <span class="section-kicker">// uma linguagem, várias formas</span>
+          <h2>Tudo o que sua<br><em>presença precisa.</em></h2>
+        </div>
+        <div class="section-heading-aside reveal" style="transition-delay:.1s">
+          <p>Seis fornecedores costumam criar seis vozes. Aqui, estratégia, criação e execução conversam na mesma mesa.</p>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-top">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+            <span>01</span>
+          </div>
+          <h3>Sites & manutenção</h3>
+          <p>Interfaces rápidas, responsivas e pensadas para continuar vivas depois do lançamento.</p>
+          <button class="service-link">Entender melhor <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-top">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m17 3 4 4L7 21H3v-4Z"/></svg>
+            <span>02</span>
+          </div>
+          <h3>Landing pages</h3>
+          <p>Páginas que organizam uma oferta, uma história ou uma campanha em um só movimento.</p>
+          <button class="service-link">Entender melhor <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-top">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2a10 10 0 1 0 0 20c1 0 1.5-.5 1.5-1.3 0-.4-.15-.7-.4-1a1.9 1.9 0 0 1-.4-1.1c0-.8.7-1.5 1.6-1.5H16a4 4 0 0 0 4-4c0-5-4.5-9-8-9Z"/></svg>
+            <span>03</span>
+          </div>
+          <h3>Identidade visual</h3>
+          <p>Logotipo, linguagem e sistema visual para a marca ser reconhecida em qualquer formato.</p>
+          <button class="service-link">Entender melhor <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-top">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
+            <span>04</span>
+          </div>
+          <h3>Aplicativos</h3>
+          <p>Fluxos digitais sob medida, do primeiro wireframe ao protótipo que já pode ser testado.</p>
+          <button class="service-link">Entender melhor <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+        </div>
+        <div class="service-card">
+          <div class="service-card-top">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2Z"/><path d="m17 10 5-3v10l-5-3"/></svg>
+            <span>05</span>
+          </div>
+          <h3>Edição de vídeos</h3>
+          <p>Cortes, ritmo e acabamento para transformar conteúdo bruto em presença de marca.</p>
+          <button class="service-link">Entender melhor <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+        </div>
+
+        <div class="ecosystem-card">
+          <div>
+            <svg class="icon icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65M22 12.65l-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
+            <span class="card-eyebrow">O jeito DINEIX de trabalhar</span>
+          </div>
+          <div>
+            <h3>Ecossistema integrado.</h3>
+            <p>Site, identidade, vídeo e produto digital trabalhando juntos — sem perder a intenção no caminho.</p>
+          </div>
+          <button class="ecosystem-action" id="ecosystem-cta">Montar meu ecossistema <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSPACE / CALCULADORA -->
+    <section class="workspace-section" id="workspace">
+      <div class="workspace-shell section-shell">
+        <div class="workspace-copy">
+          <span class="section-kicker">// workspace de briefing</span>
+          <h2>Uma primeira ideia<br>para <em>começar.</em></h2>
+          <p>Ajuste a escala e a intenção do seu projeto. É uma estimativa visual, não uma proposta fechada — mas ajuda a transformar vontade em conversa.</p>
+          <div class="workspace-note"><span class="status-dot"></span> Simulação demonstrativa · valores de referência</div>
+        </div>
+        <div class="workspace-panel">
+          <div class="workspace-panel-head">
+            <div><span class="card-eyebrow">Seu projeto</span><h3>Diretrizes iniciais</h3></div>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.9 4.9L5 9l4.9 1.9L11 16l1.9-4.9L19 9l-4.9-1.9Z"/></svg>
+          </div>
+          <div class="workspace-control">
+            <div class="control-label"><span>Metragem / escala</span><strong id="workspace-area-value">90 m²</strong></div>
+            <input type="range" min="30" max="240" step="10" value="90" id="workspace-slider-area">
+          </div>
+          <div class="workspace-control">
+            <div class="control-label"><span>Direção estética</span><span class="control-hint">escolha uma</span></div>
+            <div class="style-options" id="workspace-style-options">
+              <button class="is-active" data-style="Minimalista">Minimalista</button>
+              <button data-style="Expressivo">Expressivo</button>
+              <button data-style="Estratégico">Estratégico</button>
+            </div>
+          </div>
+          <div class="workspace-result">
+            <span>investimento de referência</span>
+            <strong id="workspace-estimate">R$ 1.575</strong>
+            <span>a partir de · briefing + criação + entrega</span>
+          </div>
+          <button class="workspace-button" id="workspace-calculate-btn">Levar isso para uma conversa <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section class="process-section section-shell" id="processo">
+      <div class="section-heading-row">
+        <div class="reveal">
+          <span class="section-kicker">// como funciona</span>
+          <h2>Do primeiro<br><em>"e se?"</em> à entrega.</h2>
+        </div>
+        <div class="section-heading-aside reveal" style="transition-delay:.1s">
+          <p>Um processo simples de entender, com espaço suficiente para fazer as perguntas certas antes de abrir qualquer arquivo.</p>
+        </div>
+      </div>
+      <div class="process-list">
+        <div class="process-item reveal">
+          <span class="process-number">01</span>
+          <div><h3>Conversa inicial</h3><p>Entendo o momento, o negócio e o que precisa mudar.</p></div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </div>
+        <div class="process-item reveal" style="transition-delay:.07s">
+          <span class="process-number">02</span>
+          <div><h3>Direção</h3><p>Organizamos escopo, referências e um caminho possível.</p></div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </div>
+        <div class="process-item reveal" style="transition-delay:.14s">
+          <span class="process-number">03</span>
+          <div><h3>Criação</h3><p>Mão na massa, com atualizações e decisões compartilhadas.</p></div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </div>
+        <div class="process-item reveal" style="transition-delay:.21s">
+          <span class="process-number">04</span>
+          <div><h3>Entrega & suporte</h3><p>Tudo pronto para seguir — e suporte para o que vier depois.</p></div>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact-section" id="contato">
+      <div class="contact-grid section-shell">
+        <div class="contact-copy reveal">
+          <span class="section-kicker">// vamos conversar</span>
+          <h2>Tem um projeto<br>em <em>mente?</em></h2>
+          <p>Me conta o que você está tentando construir. Mesmo que ainda esteja no começo, a primeira conversa já pode colocar as coisas no lugar.</p>
+          <div class="contact-direct">
+            <a href="mailto:dineixavierr@gmail.com"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> dineixavierr@gmail.com</a>
+            <a href="https://wa.me/5532984180744" target="_blank" rel="noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg> WhatsApp direto <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg></a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal" style="transition-delay:.12s">
+          <form class="contact-form" id="contact-form">
+            <div class="form-heading"><span>Briefing rápido</span><span>01 / 01</span></div>
+            <label for="contact-name">Seu nome
+              <input id="contact-name" placeholder="Como posso te chamar?" required>
+            </label>
+            <label for="contact-email">Seu e-mail
+              <input id="contact-email" type="email" placeholder="voce@empresa.com" required>
+            </label>
+            <label for="contact-message">O que você quer criar?
+              <textarea id="contact-message" placeholder="Site, marca, app, vídeo... conte um pouco." required></textarea>
+            </label>
+            <button type="submit" class="form-submit">Enviar briefing <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+            <span class="form-footnote"><svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Sem spam. Só uma conversa com contexto.</span>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <span class="footer-brand">DINEI<span>XAVIER</span></span>
+      <p class="footer-tagline">Design, tecnologia e intenção.</p>
+      <button class="back-to-top" data-scroll="inicio">Voltar ao topo <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DINEIX — Soluções digitais completas.</span>
+      <div>
+        <a href="mailto:dineixavierr@gmail.com">E-mail</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+      </div>
+      <span>Minas Gerais · Brasil</span>
+    </div>
+  </footer>
+
+  <!-- MODAL: DETALHE DO PROJETO -->
+  <div class="dialog-overlay" id="project-dialog-overlay" hidden>
+    <div class="dialog project-dialog" role="dialog" aria-modal="true">
+      <button class="dialog-close" data-close="project-dialog-overlay" aria-label="Fechar">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <span class="section-kicker" id="project-dialog-kicker"></span>
+      <h2 id="project-dialog-title"></h2>
+      <p id="project-dialog-description"></p>
+      <img class="project-dialog-image" id="project-dialog-image" src="" alt="">
+      <div class="project-dialog-meta">
+        <span>Escopo <strong id="project-dialog-outcome"></strong></span>
+        <span>Formato <strong>Estudo selecionado</strong></span>
+      </div>
+      <button class="button-primary" id="project-dialog-cta">Quero um projeto assim <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button>
+    </div>
+  </div>
+
+  <!-- MODAL: EXPERIÊNCIA GUIADA -->
+  <div class="dialog-overlay" id="guided-dialog-overlay" hidden>
+    <div class="dialog guided-dialog" role="dialog" aria-modal="true">
+      <button class="dialog-close" data-close="guided-dialog-overlay" aria-label="Fechar">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="guided-topline">
+        <span class="section-kicker" id="guided-step-label"></span>
+        <span id="guided-step-count"></span>
+      </div>
+      <h2 id="guided-question"></h2>
+      <p>Escolha o que mais se aproxima. Não existe resposta errada por aqui.</p>
+      <div class="guided-options" id="guided-options"></div>
+      <div class="guided-progress"><span id="guided-progress-bar"></span></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

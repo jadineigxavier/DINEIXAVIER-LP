@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raiz Coletiva — Plantar é um ato coletivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F1E7;
+    --pine:#1B3324;
+    --pine-deep:#122419;
+    --soil:#C1602E;
+    --sun:#E6B23D;
+    --line:rgba(27,51,36,.18);
+    --paper-line:rgba(245,241,231,.22);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--pine);
+    font-family:'Work Sans',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.08;
+    margin:0;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.wrap{padding:0 20px;}}
+
+  :focus-visible{outline:2px solid var(--soil);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+  }
+
+  /* ===== Header ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:40;
+    background:rgba(245,241,231,.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1120px;margin:0 auto;}
+  @media(max-width:640px){.nav{padding:16px 20px;}}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;letter-spacing:.01em;display:flex;align-items:center;gap:8px;}
+  .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--soil);display:inline-block;}
+  nav.links{display:flex;gap:32px;font-size:.95rem;}
+  nav.links a{text-decoration:none;position:relative;}
+  nav.links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--pine);transition:width .25s ease;}
+  nav.links a:hover::after{width:100%;}
+  @media(max-width:800px){nav.links{display:none;}}
+  .nav-cta{background:var(--pine);color:var(--paper);padding:10px 20px;border-radius:100px;text-decoration:none;font-size:.9rem;font-weight:500;white-space:nowrap;}
+
+  /* ===== Hero ===== */
+  .hero{
+    padding:168px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:end;}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:40px;}}
+  .kicker{font-size:.95rem;color:var(--soil);margin-bottom:20px;}
+  .hero h1{font-size:clamp(2.6rem,5.4vw,4.4rem);max-width:12ch;}
+  .hero p.lede{margin-top:22px;font-size:1.15rem;max-width:44ch;color:#33513f;}
+  .hero-actions{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:100px;
+    font-size:.95rem;font-weight:500;text-decoration:none;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--soil);color:var(--paper);}
+  .btn-primary:hover{background:#a84f24;}
+  .btn-ghost{border-color:var(--pine);color:var(--pine);}
+  .btn-ghost:hover{background:var(--pine);color:var(--paper);}
+
+  .hero-figure{
+    background:var(--pine);
+    border-radius:22px;
+    aspect-ratio:4/5;
+    position:relative;
+    overflow:hidden;
+    display:flex;align-items:flex-end;
+  }
+  .hero-figure svg{position:absolute;inset:0;width:100%;height:100%;}
+  .hero-stat{
+    position:relative;z-index:2;color:var(--paper);padding:28px;
+    width:100%;
+  }
+  .hero-stat .num{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:600;}
+  .hero-stat .cap{font-size:.9rem;color:var(--paper);opacity:.75;margin-top:4px;}
+
+  .partners{margin-top:88px;padding-top:32px;border-top:1px solid var(--line);}
+  .partners p{font-size:.85rem;color:#5b715f;margin:0 0 18px;}
+  .partner-row{display:flex;gap:40px;flex-wrap:wrap;font-family:'Fraunces',serif;font-weight:500;font-size:1.05rem;color:#3e5a48;opacity:.8;}
+
+  /* ===== Section shared ===== */
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(1.9rem,3.4vw,2.6rem);}
+  .section-head p{margin-top:16px;color:#33513f;font-size:1.05rem;}
+
+  /* ===== O problema (stats) ===== */
+  .stats-section{background:var(--pine);color:var(--paper);}
+  .stats-section .section-head p{color:#cdddcf;}
+  .stats-section .kicker{color:var(--sun);}
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--paper-line);border:1px solid var(--paper-line);border-radius:18px;overflow:hidden;}
+  @media(max-width:760px){.stat-grid{grid-template-columns:1fr;}}
+  .stat-card{background:var(--pine);padding:40px 32px;}
+  .stat-card .n{font-family:'Fraunces',serif;font-size:2.8rem;color:var(--sun);}
+  .stat-card p{margin-top:10px;color:#cdddcf;font-size:.98rem;}
+
+  /* ===== Como funciona (sequência real -> numerada) ===== */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+  @media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.steps{grid-template-columns:1fr;}}
+  .step{border-top:1px solid var(--line);padding-top:20px;}
+  .step .idx{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--soil);}
+  .step h3{margin-top:14px;font-size:1.15rem;}
+  .step p{margin-top:10px;font-size:.95rem;color:#33513f;}
+
+  /* ===== Onde plantamos (mapa ilustrado) ===== */
+  .map-section{background:#EDE7D6;}
+  .map-wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center;}
+  @media(max-width:880px){.map-wrap{grid-template-columns:1fr;}}
+  .map-list{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:0;}
+  .map-list li{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid var(--line);font-size:1rem;}
+  .map-list li:last-child{border-bottom:1px solid var(--line);}
+  .map-list .place{font-weight:500;}
+  .map-list .count{color:var(--soil);font-family:'Fraunces',serif;}
+
+  /* ===== Depoimento ===== */
+  .quote-section{padding:80px 0;}
+  blockquote{
+    margin:0;font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.35;
+    max-width:20ch;color:var(--pine);
+  }
+  .quote-by{margin-top:26px;font-family:'Work Sans',sans-serif;font-size:.95rem;color:#5b715f;}
+
+  /* ===== CTA final (form) ===== */
+  .cta-section{background:var(--pine);color:var(--paper);border-radius:28px;margin:0 32px 0;padding:72px 48px;}
+  @media(max-width:640px){.cta-section{margin:0 20px;padding:52px 28px;}}
+  .cta-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  @media(max-width:880px){.cta-inner{grid-template-columns:1fr;}}
+  .cta-inner h2{font-size:clamp(1.8rem,3.4vw,2.4rem);max-width:14ch;}
+  .cta-inner p{margin-top:18px;color:#cdddcf;max-width:38ch;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  label{font-size:.85rem;color:#cdddcf;}
+  input,select{
+    background:transparent;border:1px solid var(--paper-line);border-radius:10px;
+    padding:13px 14px;color:var(--paper);font-size:.95rem;font-family:'Work Sans',sans-serif;
+  }
+  input::placeholder{color:#8fa892;}
+  input:focus,select:focus{border-color:var(--sun);}
+  select option{color:var(--pine);}
+  .form-submit{
+    margin-top:6px;background:var(--sun);color:var(--pine-deep);border:none;
+    padding:14px 22px;border-radius:100px;font-weight:600;font-size:.95rem;cursor:pointer;
+  }
+  .form-submit:hover{background:#f0c65c;}
+  .form-note{font-size:.8rem;color:#8fa892;margin-top:2px;}
+  .success{display:none;font-size:.95rem;background:rgba(230,178,61,.15);border:1px solid var(--sun);padding:14px 16px;border-radius:10px;color:var(--sun);}
+  .success.show{display:block;}
+  form.hide{display:none;}
+
+  /* ===== Footer ===== */
+  footer{padding:64px 0 40px;}
+  .footer-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;border-top:1px solid var(--line);padding-top:32px;}
+  .footer-row .logo{margin-bottom:6px;}
+  footer p{font-size:.85rem;color:#5b715f;margin:0;}
+  .footer-links{display:flex;gap:24px;font-size:.85rem;}
+  .footer-links a{text-decoration:none;}
+  .footer-links a:hover{color:var(--soil);}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo"><span class="dot"></span>Raiz Coletiva</div>
+    <nav class="links">
+      <a href="#problema">O cenário</a>
+      <a href="#como">Como funciona</a>
+      <a href="#onde">Onde plantamos</a>
+      <a href="#participar">Participar</a>
+    </nav>
+    <a class="nav-cta" href="#participar">Quero plantar</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">Campanha de reflorestamento urbano — Juiz de Fora</p>
+          <h1>Cada árvore plantada muda o mapa do bairro.</h1>
+          <p class="lede">A Raiz Coletiva organiza mutirões de plantio em terrenos vazios e praças esquecidas de Juiz de Fora. Você entra com um sábado de manhã — a gente entra com as mudas, a terra e o acompanhamento.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#participar">Entrar no próximo mutirão</a>
+            <a class="btn btn-ghost" href="#como">Ver como funciona</a>
+          </div>
+        </div>
+        <div class="hero-figure" aria-hidden="true">
+          <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMax slice">
+            <rect width="400" height="500" fill="#1B3324"/>
+            <path d="M0 500 L0 380 Q60 340 120 380 T240 380 T360 380 L400 400 L400 500 Z" fill="#22402B"/>
+            <path d="M200 500 L200 300" stroke="#3E5A48" stroke-width="6"/>
+            <path d="M200 320 C160 300 150 260 175 235 C150 225 145 190 175 170 C160 150 170 115 200 110 C230 115 240 150 225 170 C255 190 250 225 225 235 C250 260 240 300 200 320Z" fill="#3E5A48"/>
+            <path d="M120 500 L120 420" stroke="#2C4A38" stroke-width="4"/>
+            <path d="M120 430 C100 420 96 400 112 388 C98 380 100 358 120 352 C136 358 140 380 128 388 C144 400 140 420 120 430Z" fill="#2C4A38"/>
+            <path d="M290 500 L290 400" stroke="#2C4A38" stroke-width="4"/>
+            <path d="M290 415 C270 405 266 383 284 372 C270 363 273 340 292 335 C308 340 312 363 300 372 C316 383 312 405 292 415Z" fill="#2C4A38"/>
+            <circle cx="330" cy="80" r="34" fill="#E6B23D" opacity="0.9"/>
+          </svg>
+          <div class="hero-stat">
+            <div class="num">22.150</div>
+            <div class="cap">mudas plantadas desde 2023, em bairros de Juiz de Fora</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners">
+        <p>Já plantamos junto com</p>
+        <div class="partner-row">
+          <span>Prefeitura de Juiz de Fora</span>
+          <span>Agenda-JF</span>
+          <span>Coletivo Mata Viva</span>
+          <span>UFJF — Lab. de Ecologia Vegetal</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-section" id="problema">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">O cenário em Juiz de Fora</p>
+        <h2>A cidade está perdendo sombra mais rápido do que está plantando</h2>
+        <p>Bairros inteiros de Juiz de Fora crescem sem praça nem árvore de rua, enquanto o calor nas regiões mais densas sobe. O plantio isolado não dá conta — é preciso escala, manutenção e gente do próprio bairro cuidando.</p>
+      </div>
+      <div class="stat-grid reveal">
+        <div class="stat-card">
+          <div class="n">12,49 m²</div>
+          <p>de área verde por habitante no Centro — abaixo dos 15 m²/hab recomendados pela SBAU</p>
+        </div>
+        <div class="stat-card">
+          <div class="n">291 ha</div>
+          <p>de Mata Atlântica preservados na Mata do Krambeck, na Zona Norte</p>
+        </div>
+        <div class="stat-card">
+          <div class="n">1 em 4</div>
+          <p>mudas plantadas sem manutenção não sobrevive ao primeiro verão</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Como funciona</p>
+        <h2>Do terreno vazio à muda adulta</h2>
+        <p>É por isso que cada mutirão da Raiz Coletiva segue as mesmas quatro etapas — inclusive depois que a gente já foi embora.</p>
+      </div>
+      <div class="steps reveal">
+        <div class="step">
+          <div class="idx">01</div>
+          <h3>Mapeamento</h3>
+          <p>Identificamos terrenos e praças com o poder público e moradores da região.</p>
+        </div>
+        <div class="step">
+          <div class="idx">02</div>
+          <h3>Mutirão</h3>
+          <p>Um sábado de plantio guiado, com mudas nativas e ferramentas por nossa conta.</p>
+        </div>
+        <div class="step">
+          <div class="idx">03</div>
+          <h3>Adoção</h3>
+          <p>Cada árvore fica sob cuidado de um morador ou comércio vizinho, com orientação.</p>
+        </div>
+        <div class="step">
+          <div class="idx">04</div>
+          <h3>Acompanhamento</h3>
+          <p>Visitas trimestrais por 2 anos até a muda se firmar sozinha.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section" id="onde">
+    <div class="wrap">
+      <div class="map-wrap">
+        <div class="reveal">
+          <p class="kicker">Onde plantamos</p>
+          <h2>Um movimento que cresce bairro por bairro em Juiz de Fora</h2>
+          <ul class="map-list">
+            <li><span class="place">Zona Norte</span><span class="count">5.480 mudas</span></li>
+            <li><span class="place">Zona Nordeste</span><span class="count">4.120 mudas</span></li>
+            <li><span class="place">Centro</span><span class="count">2.860 mudas</span></li>
+            <li><span class="place">Zona Sul</span><span class="count">4.950 mudas</span></li>
+            <li><span class="place">Zona Leste</span><span class="count">4.740 mudas</span></li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <svg viewBox="0 0 320 320" style="width:100%;height:auto;">
+            <rect width="320" height="320" rx="18" fill="#DED5B8"/>
+            <path d="M40 60 L120 40 L200 55 L260 90 L280 150 L250 220 L190 270 L120 260 L60 220 L35 150 Z" fill="#C9BE9C" opacity="0.6"/>
+            <circle cx="110" cy="100" r="7" fill="#C1602E"/>
+            <circle cx="180" cy="90" r="10" fill="#C1602E"/>
+            <circle cx="220" cy="150" r="6" fill="#C1602E"/>
+            <circle cx="150" cy="180" r="9" fill="#C1602E"/>
+            <circle cx="90" cy="190" r="7" fill="#C1602E"/>
+            <circle cx="200" cy="220" r="5" fill="#C1602E"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="wrap reveal">
+      <blockquote>"A árvore que plantamos na esquina da padaria já dá sombra pra fila do ônibus todo santo dia."</blockquote>
+      <p class="quote-by">Marlene Aparecida, moradora do bairro Vivendas da Serra, Zona Nordeste, madrinha de 1 árvore</p>
+    </div>
+  </section>
+
+  <section id="participar">
+    <div class="wrap">
+      <div class="cta-section reveal">
+        <div class="cta-inner">
+          <div>
+            <h2>Escolha um sábado e plante com a gente</h2>
+            <p>Sem experiência necessária. Levamos mudas, ferramentas e um lanche pra equipe. Você leva a disposição para sujar a mão de terra.</p>
+          </div>
+          <div>
+            <form id="cta-form">
+              <div class="field">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required>
+              </div>
+              <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" placeholder="voce@email.com" required>
+              </div>
+              <div class="field">
+                <label for="cidade">Cidade</label>
+                <select id="cidade" name="cidade" required>
+                  <option value="" disabled selected>Selecione sua região</option>
+                  <option>Zona Norte</option>
+                  <option>Zona Nordeste</option>
+                  <option>Centro</option>
+                  <option>Zona Sul</option>
+                  <option>Zona Leste</option>
+                </select>
+              </div>
+              <button class="form-submit" type="submit">Quero participar do próximo mutirão</button>
+              <p class="form-note">Avisamos por e-mail a data e o ponto de encontro com 1 semana de antecedência.</p>
+            </form>
+            <div class="success" id="success-msg">Inscrição recebida! Em breve você recebe a data do próximo mutirão na sua região.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div>
+        <div class="logo"><span class="dot"></span>Raiz Coletiva</div>
+        <p>Reflorestamento urbano em Juiz de Fora, mutirão a mutirão.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#problema">O cenário</a>
+        <a href="#como">Como funciona</a>
+        <a href="#onde">Onde plantamos</a>
+        <a href="#participar">Participar</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal ao rolar
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.15});
+  items.forEach(el=>io.observe(el));
+
+  // Form de exemplo (sem backend real — projeto de demonstração)
+  const form = document.getElementById('cta-form');
+  const success = document.getElementById('success-msg');
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    form.classList.add('hide');
+    success.classList.add('show');
+  });
+</script>
+
+</body>
+</html>

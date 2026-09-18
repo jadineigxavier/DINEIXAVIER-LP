@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chroma Atelier - Estojo Master de Pintura & Aquarela Fine Art</title>
+  <meta name="description" content="Estojo artístico premium com pigmentos puros, alta resistência à luz, pincéis de precisão e estojo de madeira maciça. Ideal para artistas e estudantes.">
+  
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. BARRA SUPERIOR DE ANÚNCIOS -->
+  <div class="top-bar">
+    <span class="top-bar-badge">OFERTA ESPECIAL</span>
+    <span>🎨 Frete Grátis para todo o Brasil acima de R$ 199 | Use o cupom <strong>ARTE10</strong> para 10% OFF</span>
+  </div>
+
+  <!-- 2. NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon">C</div>
+        <span class="brand-name">Chroma <span>Atelier</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#produto" class="nav-link">Visão Geral</a></li>
+        <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+        <li><a href="#unboxing" class="nav-link">O Que Inclui</a></li>
+        <li><a href="#comparativo" class="nav-link">Comparativo</a></li>
+        <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
+        <li><a href="#faq" class="nav-link">Dúvidas</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="openCartBtn" aria-label="Abrir Carrinho de Compras">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+            <path d="M3 6h18"></path>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. BREADCRUMB -->
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="#">Início</a>
+      <span>/</span>
+      <a href="#">Materiais Artísticos</a>
+      <span>/</span>
+      <a href="#">Pintura & Aquarela</a>
+      <span>/</span>
+      <span style="color: var(--color-dark); font-weight: 600;">Estojo Chroma Pro</span>
+    </nav>
+  </div>
+
+  <!-- 4. HERO SECTION / DETALHES DO PRODUTO -->
+  <main class="product-hero" id="produto">
+    <div class="container">
+      <div class="product-grid">
+
+        <!-- Coluna Esquerda: Galeria Interativa -->
+        <div class="gallery-wrapper">
+          <div class="main-image-box">
+            <div class="gallery-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              Edição Master 2026
+            </div>
+            <img id="mainImage" src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=85" alt="Estojo Chroma Atelier Pigmentos e Pincéis">
+          </div>
+
+          <!-- Miniaturas Clicáveis -->
+          <div class="thumbnail-carousel">
+            <div class="thumb-item active" data-full="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=85">
+              <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=300&q=80" alt="Vista do estojo de pintura">
+            </div>
+            <div class="thumb-item" data-full="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=85">
+              <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=300&q=80" alt="Pincéis e cores vibrantes">
+            </div>
+            <div class="thumb-item" data-full="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=85">
+              <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=300&q=80" alt="Pigmentos puros em ação">
+            </div>
+            <div class="thumb-item" data-full="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=1200&q=85">
+              <img src="https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=300&q=80" alt="Detalhe dos pincéis de precisão">
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Detalhes, Preço e Compra -->
+        <div class="product-details">
+          <div class="product-meta-header">
+            <span class="category-tag">Linha Fine Art • Atelier Pro</span>
+            <div class="rating-container">
+              <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <span class="rating-score">4.9</span>
+              <span class="rating-count">(1.482 avaliações)</span>
+            </div>
+          </div>
+
+          <h1 class="product-title">Chroma Atelier - Estojo Master de Pintura Fine Art</h1>
+          <p class="product-subtitle">Desenvolvido com pigmentos puros minerais de alta dispersão, resistência máxima ao desbotamento solar (ASTM D4236) e estojo ergonômico em madeira com conjunto de pincéis de precisão.</p>
+
+          <!-- Banner de Oferta Relâmpago com Timer -->
+          <div class="flash-offer-banner">
+            <div class="flash-text">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>Oferta Especial de Lançamento</span>
+            </div>
+            <div class="countdown-timer">
+              Termina em:
+              <span class="timer-box" id="timerHours">05</span>:
+              <span class="timer-box" id="timerMinutes">43</span>:
+              <span class="timer-box" id="timerSeconds">28</span>
+            </div>
+          </div>
+
+          <!-- Preço Dinâmico -->
+          <div class="price-container">
+            <div class="price-main">
+              <span class="price-current" id="priceCurrent">R$ 289,90</span>
+              <span class="price-old" id="priceOld">R$ 399,90</span>
+              <span class="discount-tag" id="discountTag">28% OFF</span>
+            </div>
+            <p class="price-installment" id="priceInstallment">ou até <strong>10x de R$ 28,99 sem juros</strong> no cartão</p>
+            <div class="pix-discount-note">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>+ 5% de desconto extra pagando via PIX</span>
+            </div>
+          </div>
+
+          <!-- Seletor de Opções / Kits -->
+          <div class="options-section">
+            <div class="section-label">
+              <strong>Selecione sua Configuração:</strong>
+              <span>Garantia de 30 dias</span>
+            </div>
+
+            <div class="kit-selector-grid">
+              <!-- Opção 1: Essencial -->
+              <div class="kit-option" data-kit="essencial">
+                <div class="kit-option-left">
+                  <div class="kit-radio-circle"></div>
+                  <div class="kit-title-group">
+                    <h4>Kit Essencial (24 Cores + 3 Pincéis)</h4>
+                    <p>Ideal para estudos, ilustrações e transporte diário</p>
+                  </div>
+                </div>
+                <div class="kit-price-tag">
+                  <div class="val">R$ 189,90</div>
+                  <div class="savings">Economize R$ 60</div>
+                </div>
+              </div>
+
+              <!-- Opção 2: Master Studio (Padrão) -->
+              <div class="kit-option selected" data-kit="master">
+                <span class="kit-badge-popular">Mais Vendido 🔥</span>
+                <div class="kit-option-left">
+                  <div class="kit-radio-circle"></div>
+                  <div class="kit-title-group">
+                    <h4>Kit Master Studio (48 Cores + Cavalete)</h4>
+                    <p>48 cores, 6 pincéis Kolinsky sintéticos e cavalete portátil</p>
+                  </div>
+                </div>
+                <div class="kit-price-tag">
+                  <div class="val">R$ 289,90</div>
+                  <div class="savings">Economize R$ 110</div>
+                </div>
+              </div>
+
+              <!-- Opção 3: Colecionador -->
+              <div class="kit-option" data-kit="colecionador">
+                <div class="kit-option-left">
+                  <div class="kit-radio-circle"></div>
+                  <div class="kit-title-group">
+                    <h4>Edição Colecionador (72 Cores + Nogueira)</h4>
+                    <p>72 cores puras em caixa de nogueira + bloco 100% algodão 300g/m²</p>
+                  </div>
+                </div>
+                <div class="kit-price-tag">
+                  <div class="val">R$ 429,90</div>
+                  <div class="savings">Economize R$ 160</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ações de Compra e Quantidade -->
+          <div class="purchase-actions">
+            <div class="quantity-control">
+              <button class="qty-btn" id="qtyMinus" aria-label="Diminuir quantidade">-</button>
+              <input type="text" class="qty-input" id="qtyInput" value="1" readonly>
+              <button class="qty-btn" id="qtyPlus" aria-label="Aumentar quantidade">+</button>
+            </div>
+
+            <button class="btn-add-cart" id="btnAddToCart">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+                <path d="M3 6h18"></path>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Adicionar ao Carrinho
+            </button>
+
+            <button class="btn-buy-now" id="btnBuyNow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Comprar Agora
+            </button>
+          </div>
+
+          <!-- Simulador de Frete -->
+          <div class="shipping-calculator">
+            <div class="shipping-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              <span>Calcular prazo e frete de entrega:</span>
+            </div>
+            <div class="shipping-form">
+              <input type="text" class="shipping-input" id="cepInput" placeholder="Digite seu CEP (ex: 01310-100)" maxlength="9">
+              <button class="shipping-btn" id="cepSubmitBtn">Calcular</button>
+            </div>
+            <div class="shipping-results" id="shippingResults">
+              <div class="shipping-result-row">
+                <span>Envio Padrão PAC (5 a 8 dias úteis)</span>
+                <span class="free-tag">GRÁTIS</span>
+              </div>
+              <div class="shipping-result-row">
+                <span>Expresso Sedex (2 a 3 dias úteis)</span>
+                <strong>R$ 18,90</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selos de Confiança -->
+          <div class="trust-badges">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <span>Garantia de 30 Dias Incondicional</span>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <span>Pigmentos 100% Atóxicos (ASTM D4236)</span>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                </svg>
+              </div>
+              <span>Pagamento Seguro Criptografado</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 5. SEÇÃO DE DIFERENCIAIS -->
+  <section class="features-section" id="diferenciais">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle-pill">Qualidade de Atelier</span>
+        <h2 class="section-title">A precisão que a sua arte merece</h2>
+        <p class="section-desc">Criado em colaboração com artistas plásticos para garantir luminosidade, transparência e controle cromático absoluto.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">🎨</div>
+          <h3>Pigmentos de Alta Densidade</h3>
+          <p>Cores intensas e saturadas desde a primeira pincelada. Pouca água já libera tons vibrantes que duram décadas sem oxidar.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🖌️</div>
+          <h3>Pincéis Kolinsky Veganos</h3>
+          <p>Fibras sintéticas com memória de ponta impecável, retenção uniforme de tinta e maciez superior sem crueldade animal.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">🪵</div>
+          <h3>Estojo em Madeira Nobre</h3>
+          <p>Proteção hermética com fechos magnéticos e paleta de mistura integrada, perfeita para pintura no ateliê ou ao ar livre (plein air).</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">☀️</div>
+          <h3>Resistência à Luz</h3>
+          <p>Classificação máxima de resistência UV. Suas obras mantêm o frescor e vivacidade originais mesmo expostas à claridade natural.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SEÇÃO UNBOXING / O QUE VEM NA CAIXA -->
+  <section class="unboxing-section" id="unboxing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle-pill">Unboxing Completo</span>
+        <h2 class="section-title">O que vem dentro do estojo</h2>
+        <p class="section-desc">Tudo o que você precisa para criar sem limites, da primeira demão ao acabamento mais fino.</p>
+      </div>
+
+      <div class="unboxing-grid">
+        <div class="unboxing-image">
+          <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1000&q=85" alt="Conteúdo do Kit de Pintura Aberto na Mesa">
+        </div>
+
+        <div class="unboxing-checklist">
+          <div class="checklist-item">
+            <div class="checklist-icon">✓</div>
+            <div class="checklist-content">
+              <h4>Até 72 Pastilhas de Pigmento Puro</h4>
+              <p>Formulação europeia com moagem ultrafina para velaturas suaves e misturas límpidas sem aspecto leitoso.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-icon">✓</div>
+            <div class="checklist-content">
+              <h4>Conjunto de 6 Pincéis de Precisão</h4>
+              <p>Formatos essenciais inclusos: Redondos nº 2, 6 e 10, Chato nº 8, Chanfrado e Pincel Mop para aguadas amplas.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-icon">✓</div>
+            <div class="checklist-content">
+              <h4>Cavalete de Mesa Articulável</h4>
+              <p>Compacto, dobrável e ajustável em 4 ângulos ergonômicos para evitar fadiga durante horas de pintura.</p>
+            </div>
+          </div>
+
+          <div class="checklist-item">
+            <div class="checklist-icon">✓</div>
+            <div class="checklist-content">
+              <h4>Paleta de Mistura em Porcelana Resinada</h4>
+              <p>Não mancha com os pigmentos e permite limpeza imediata com apenas um pano úmido ou água corrente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. TABELA COMPARATIVA -->
+  <section class="comparison-section" id="comparativo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle-pill">Comparativo</span>
+        <h2 class="section-title">Por que o Chroma Atelier supera as alternativas?</h2>
+        <p class="section-desc">Veja a diferença entre materiais formulados para artistas e produtos convencionais de mercado.</p>
+      </div>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th class="highlight-col">Chroma Atelier Pro ✨</th>
+              <th>Tintas Estudantes Comuns</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Carga de Pigmento</strong></td>
+              <td class="highlight-col"><span class="check-icon">✓</span> 85% Pigmento Mineral Puro</td>
+              <td><span class="cross-icon">✕</span> Menos de 30% (muita carga inerte)</td>
+            </tr>
+            <tr>
+              <td><strong>Resistência à Luz (UV)</strong></td>
+              <td class="highlight-col"><span class="check-icon">✓</span> Certificação ASTM D4236 (50+ anos)</td>
+              <td><span class="cross-icon">✕</span> Desbota em poucos meses</td>
+            </tr>
+            <tr>
+              <td><strong>Pincéis Inclusos</strong></td>
+              <td class="highlight-col"><span class="check-icon">✓</span> Kolinsky Vegano com ponteira niquelada</td>
+              <td><span class="cross-icon">✕</span> Cerdas plásticas que soltam pelos</td>
+            </tr>
+            <tr>
+              <td><strong>Estojo e Proteção</strong></td>
+              <td class="highlight-col"><span class="check-icon">✓</span> Madeira maciça com fecho magnético</td>
+              <td><span class="cross-icon">✕</span> Plástico fino ou lata deformável</td>
+            </tr>
+            <tr>
+              <td><strong>Garantia de Satisfação</strong></td>
+              <td class="highlight-col"><span class="check-icon">✓</span> 30 dias incondicionais</td>
+              <td><span class="cross-icon">✕</span> Apenas defeito de fábrica</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. AVALIAÇÕES E DEPOIMENTOS DE ARTISTAS -->
+  <section class="reviews-section" id="avaliacoes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle-pill">Opinião de Quem Usa</span>
+        <h2 class="section-title">Amado por mais de 12.000 artistas</h2>
+        <p class="section-desc">Veja o que professores de artes, ilustradores e pintores independentes dizem sobre o estojo.</p>
+      </div>
+
+      <!-- Resumo com Barras de Nota -->
+      <div class="reviews-summary-card">
+        <div class="rating-big-score">
+          <div class="score-num">4.9</div>
+          <div class="stars">★★★★★</div>
+          <p style="font-size: 0.85rem; color: var(--color-gray-600);">Baseado em 1.482 avaliações verificadas</p>
+        </div>
+
+        <div class="rating-bars">
+          <div class="bar-row">
+            <span class="bar-label">5 estrelas</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 92%;"></div></div>
+            <span class="bar-percent">92%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">4 estrelas</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 6%;"></div></div>
+            <span class="bar-percent">6%</span>
+          </div>
+          <div class="bar-row">
+            <span class="bar-label">3 estrelas</span>
+            <div class="bar-bg"><div class="bar-fill" style="width: 2%;"></div></div>
+            <span class="bar-percent">2%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid de Depoimentos -->
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Mariana Fontes" class="author-avatar">
+            <div class="author-info">
+              <h4>Mariana Fontes</h4>
+              <span class="verified-badge">✓ Compradora Verificada</span>
+            </div>
+          </div>
+          <div class="stars" style="margin-bottom: 10px;">★★★★★</div>
+          <p class="review-comment">"A luminosidade dessas tintas é inacreditável! Costumava usar marcas importadas caras, mas o Chroma Atelier entrega exatamente o mesmo rendimento por uma fração do preço. O estojo de madeira é uma joia."</p>
+          <span class="review-date">Avaliado em São Paulo - há 4 dias</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Lucas Silveira" class="author-avatar">
+            <div class="author-info">
+              <h4>Lucas Silveira</h4>
+              <span class="verified-badge">✓ Comprador Verificado</span>
+            </div>
+          </div>
+          <div class="stars" style="margin-bottom: 10px;">★★★★★</div>
+          <p class="review-comment">"Comprei o Kit Master com o cavalete de mesa e me surpreendeu demais. Os pincéis não deformam e retêm uma quantidade ideal de água para velaturas. Chegou em 3 dias aqui em Curitiba!"</p>
+          <span class="review-date">Avaliado em Curitiba - há 1 semana</span>
+        </div>
+
+        <div class="review-card">
+          <div class="review-author">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Camila Ribeiro" class="author-avatar">
+            <div class="author-info">
+              <h4>Camila Ribeiro</h4>
+              <span class="verified-badge">✓ Compradora Verificada</span>
+            </div>
+          </div>
+          <div class="stars" style="margin-bottom: 10px;">★★★★★</div>
+          <p class="review-comment">"Sou professora de aquarela e recomendei para todos os meus alunos de turma intermediária. A mistura entre cores complementares fica limpa, sem criar aquela lama acinzentada comum em tintas baratas."</p>
+          <span class="review-date">Avaliado em Belo Horizonte - há 2 semanas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ / PERGUNTAS FREQUENTES -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle-pill">Tire Suas Dúvidas</span>
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <p class="section-desc">Reunimos as respostas para as dúvidas mais comuns dos nossos clientes.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item active">
+          <button class="faq-header">
+            <span>O estojo é recomendado para quem está começando na pintura?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-body">
+            <p>Sim! O estojo foi pensado tanto para entusiastas e iniciantes quanto para artistas profissionais. Por conter pigmentos de alta qualidade, aprender com o Chroma Atelier evita frustrações comuns causadas por materiais de baixa pigmentação que mancham o papel.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>As tintas são seguras e atóxicas?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-body">
+            <p>Absolutamente. Todos os nossos produtos cumprem as normas internacionais de segurança ASTM D-4236 e EN-71, sendo completamente livres de metais pesados prejudiciais, como chumbo e cádmio livre.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Como funciona a Garantia de Satisfação de 30 Dias?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-body">
+            <p>Você pode testar as tintas e pincéis tranquilamente por até 30 dias após o recebimento. Se por qualquer motivo sentir que o kit não atendeu às suas expectativas, basta nos enviar um e-mail que devolveremos 100% do valor pago, sem burocracia.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-header">
+            <span>Qual o prazo de envio e código de rastreio?</span>
+            <span class="faq-icon">▼</span>
+          </button>
+          <div class="faq-body">
+            <p>Os pedidos são despachados em até 24 horas úteis. O código de rastreamento é enviado automaticamente para o seu e-mail e WhatsApp para acompanhar cada etapa da entrega até a sua residência.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Chroma Atelier</h3>
+          <p>Dedicados a fornecer instrumentos de arte de qualidade de ateliê para criadores e sonhadores em todo o país.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="#produto">Estojos de Aquarela</a></li>
+            <li><a href="#produto">Pincéis Kolinsky</a></li>
+            <li><a href="#produto">Cavaletes de Mesa</a></li>
+            <li><a href="#produto">Blocos 100% Algodão</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#faq">Central de Ajuda</a></li>
+            <li><a href="#">Política de Trocas</a></li>
+            <li><a href="#">Rastreamento de Pedido</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Segurança</h4>
+          <ul>
+            <li>🔒 SSL 256-bit Certificado</li>
+            <li>🛡️ Garantia de 30 Dias</li>
+            <li>💳 Cartão, PIX e Boleto</li>
+            <li>📦 Entrega Segura Correios</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Chroma Atelier Art Supplies Ltda. Todos os direitos reservados.</span>
+        <span>Feito com paixão para artistas.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 11. CARRINHO DE COMPRAS DRAWER -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de Compras">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        Seu Carrinho
+      </h3>
+      <button class="close-cart-btn" id="closeCartBtn" aria-label="Fechar Carrinho">✕</button>
+    </div>
+
+    <!-- Barra de Progresso de Frete Grátis -->
+    <div class="cart-progress-bar">
+      <span>🎉 Parabéns! Você ganhou <strong>Frete Grátis</strong></span>
+      <div class="bar">
+        <div class="fill"></div>
+      </div>
+    </div>
+
+    <!-- Lista de Itens do Carrinho -->
+    <div class="cart-body" id="cartItems">
+      <!-- Inserido dinamicamente via JS -->
+    </div>
+
+    <!-- Mensagem de Carrinho Vazio -->
+    <div class="cart-empty" id="cartEmpty" style="display: none;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M8 12h8"></path>
+      </svg>
+      <p>Seu carrinho está vazio no momento.</p>
+      <button onclick="document.getElementById('closeCartBtn').click()" style="margin-top:12px; color:var(--color-primary); font-weight:700;">
+        Explorar Materiais
+      </button>
+    </div>
+
+    <!-- Rodapé do Carrinho -->
+    <div class="cart-footer">
+      <div class="coupon-box">
+        <input type="text" class="coupon-input" id="couponInput" placeholder="Cupom: ARTE10">
+        <button class="coupon-btn" id="applyCouponBtn">Aplicar</button>
+      </div>
+
+      <div class="cart-totals">
+        <div class="totals-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">R$ 0,00</span>
+        </div>
+        <div class="totals-row discount-row" id="cartDiscountRow" style="display: none;">
+          <span>Desconto Cupom (10%)</span>
+          <span id="cartDiscountVal">- R$ 0,00</span>
+        </div>
+        <div class="totals-row">
+          <span>Frete</span>
+          <span class="free-tag">GRÁTIS</span>
+        </div>
+        <div class="totals-row final-total">
+          <span>Total</span>
+          <span id="cartTotal">R$ 0,00</span>
+        </div>
+      </div>
+
+      <button class="btn-checkout" id="btnCheckout">
+        <span>Finalizar Pedido Seguro</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- 12. MODAL DE CONFIRMAÇÃO DE CHECKOUT -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="success-modal">
+      <div class="modal-icon">✓</div>
+      <h3 class="modal-title">Pedido Confirmado com Sucesso!</h3>
+      <p class="modal-desc">Obrigado por apoiar a arte independente. Seu pedido teste do <strong>Chroma Atelier</strong> foi processado com simulação de frete grátis.</p>
+      <p style="font-size:0.8rem; color:var(--color-gray-400); margin-bottom:20px;">Número do Pedido: #CHROMA-82941</p>
+      <button class="modal-close-btn" id="closeSuccessModalBtn">Continuar Explorando</button>
+    </div>
+  </div>
+
+  <!-- 13. BARRA FLUTUANTE MOBILE (STICKY BOTTOM) -->
+  <div class="mobile-sticky-bar">
+    <div class="mobile-price-preview">
+      <span class="mobile-price-val" id="mobilePriceVal">R$ 289,90</span>
+      <span class="mobile-price-desc">em até 10x sem juros</span>
+    </div>
+    <button class="mobile-btn-buy" id="mobileBtnBuy">Comprar Agora</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
