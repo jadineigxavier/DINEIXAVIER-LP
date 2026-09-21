@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raiz Coletiva — Caderno de Campo Nº4 · Zona Leste, São Paulo</title>
+<meta name="description" content="Coletivo de vizinhos transformando terrenos esquecidos da Zona Leste em hortas, quintais e sombra. Um mutirão por vez, desde 2021.">
+<meta name="theme-color" content="#1B3324">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23F5F1E7'/%3E%3Cpath d='M16 26V14' stroke='%231B3324' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M16 15c0-5 3.5-8 8-8 0 5-3.5 8-8 8z' fill='%23C1602E'/%3E%3Cpath d='M16 18c0-4-3-6.5-7-6.5 0 4.5 3 6.5 7 6.5z' fill='%231B3324'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Work+Sans:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<style>
+/* ============ tokens ============ */
+:root{
+  --pine:#1B3324; --pine-deep:#14261B; --paper:#F5F1E7; --paper-2:#EAE4D5;
+  --soil:#C1602E; --soil-deep:#9E4A1F; --sun:#E6B23D; --ink:#141714;
+  --kraft:#D9C3A3; --line:rgba(20,23,20,.14);
+  --serif:'Fraunces',Georgia,serif; --sans:'Work Sans','Helvetica Neue',sans-serif; --hand:'Caveat',cursive;
+  --ease:cubic-bezier(.19,1,.19,1);
+  --pad:clamp(20px,6vw,96px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+html:focus-within{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);background:var(--paper);color:var(--ink);
+  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+::selection{background:var(--sun);color:var(--pine)}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+:focus-visible{outline:2px dashed var(--soil);outline-offset:4px;border-radius:2px}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--paper)}
+::-webkit-scrollbar-thumb{background:var(--kraft);border-radius:6px;border:2px solid var(--paper)}
+
+.skip-link{position:fixed;top:-60px;left:16px;z-index:200;background:var(--pine);color:var(--paper);
+  padding:10px 18px;border-radius:999px;font-size:14px;transition:top .3s var(--ease)}
+.skip-link:focus{top:12px}
+
+/* grão de papel */
+.grain{position:fixed;inset:-50%;z-index:120;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ============ topbar ============ */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;height:70px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--pad);
+  background:rgba(245,241,231,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:9px;text-decoration:none}
+.brand b{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-.02em;color:var(--pine)}
+.brand .ed{font-family:var(--hand);font-size:17px;color:var(--soil);transform:rotate(-3deg)}
+.topnav{display:flex;align-items:center;gap:34px}
+.topnav a{font-size:12.5px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;position:relative;padding:4px 0}
+.topnav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;
+  background:var(--soil);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.topnav a:hover::after,.topnav a.active::after{transform:scaleX(1);transform-origin:left}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--soil);color:var(--paper);
+  padding:13px 26px;border-radius:999px;font-size:14.5px;font-weight:600;letter-spacing:.02em;
+  text-decoration:none;border:1px solid transparent;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s}
+.btn svg{transition:transform .35s var(--ease)}
+.btn:hover{background:var(--soil-deep);transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(158,74,31,.55)}
+.btn:hover svg{transform:translateX(4px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-ghost{background:transparent;color:var(--pine);border-color:rgba(27,51,36,.4)}
+.btn-ghost:hover{background:var(--pine);color:var(--paper);box-shadow:0 12px 28px -14px rgba(27,51,36,.6)}
+.btn-sun{background:var(--sun);color:var(--pine)}
+.btn-sun:hover{background:#F0C050}
+
+.nav-toggle{display:none;width:46px;height:46px;position:relative;z-index:130;border-radius:50%}
+.nav-toggle span{position:absolute;left:11px;width:24px;height:2.4px;background:var(--pine);border-radius:2px;
+  transition:transform .45s var(--ease),top .45s var(--ease),background .3s}
+.nav-toggle span:nth-child(1){top:17px}.nav-toggle span:nth-child(2){top:26px}
+body.menu-open .nav-toggle span{background:var(--paper)}
+body.menu-open .nav-toggle span:nth-child(1){top:21px;transform:rotate(45deg)}
+body.menu-open .nav-toggle span:nth-child(2){top:21px;transform:rotate(-45deg)}
+body.menu-open{overflow:hidden}
+body.menu-open .topbar{background:transparent;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+body.menu-open .brand b{color:var(--paper)}
+body.menu-open .brand .ed{color:var(--sun)}
+
+.menu{position:fixed;inset:0;z-index:90;background:var(--pine);color:var(--paper);
+  display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 9vw;
+  clip-path:circle(0px at calc(100% - 44px) 36px);visibility:hidden;
+  transition:clip-path .7s var(--ease),visibility 0s .7s}
+body.menu-open .menu{clip-path:circle(150% at calc(100% - 44px) 36px);visibility:visible;transition:clip-path .7s var(--ease)}
+.menu a{font-family:var(--serif);font-weight:600;font-size:clamp(34px,8.5vw,54px);letter-spacing:-.02em;
+  text-decoration:none;display:flex;align-items:baseline;gap:16px;padding:10px 0;
+  opacity:0;transform:translateY(26px);transition:opacity .5s var(--ease),transform .5s var(--ease),color .3s}
+body.menu-open .menu a{opacity:1;transform:translateY(0)}
+.menu a:nth-child(2){transition-delay:.06s}.menu a:nth-child(3){transition-delay:.12s}
+.menu a:nth-child(4){transition-delay:.18s}.menu a:nth-child(5){transition-delay:.24s}
+.menu a:hover{color:var(--sun)}
+.menu a small{font-family:var(--hand);font-size:20px;color:var(--kraft);font-weight:500}
+.menu .menu-foot{position:absolute;bottom:34px;left:9vw;font-family:var(--hand);font-size:19px;color:var(--kraft)}
+
+/* ============ hero ============ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:clip}
+.hero-photo{position:absolute;inset:0;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);opacity:.87;
+  animation:heroZoom 2.2s var(--ease) forwards;will-change:transform}
+@keyframes heroZoom{to{transform:scale(1.02)}}
+.hero-veil{position:absolute;inset:0;
+  background:linear-gradient(97deg,rgba(245,241,231,.97) 0%,rgba(245,241,231,.88) 30%,rgba(245,241,231,.42) 52%,rgba(245,241,231,0) 68%),
+             linear-gradient(to top,rgba(20,38,27,.42),rgba(20,38,27,0) 34%)}
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1440px;margin:0 auto;
+  padding:130px var(--pad) 64px}
+.hero-kicker{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--pine);
+  border:1px solid rgba(27,51,36,.35);border-radius:999px;padding:8px 18px;background:rgba(245,241,231,.7);
+  animation:fadeUp .9s var(--ease) .1s both}
+.hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--soil);animation:blink 2.4s infinite}
+@keyframes blink{50%{opacity:.35}}
+.hero h1{font-family:var(--serif);font-optical-sizing:auto;font-variation-settings:'opsz' 144,'WONK' 1,'SOFT' 30;
+  font-weight:640;font-size:clamp(56px,10.5vw,148px);line-height:.98;letter-spacing:-.028em;
+  color:var(--pine);margin:34px 0 0;max-width:12ch}
+.hero h1 em{font-style:italic;color:var(--soil);font-variation-settings:'opsz' 144,'WONK' 1,'SOFT' 60}
+.line{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.line>span{display:inline-block;transform:translateY(115%);animation:rise 1.15s var(--ease) forwards}
+.line:nth-child(1)>span{animation-delay:.22s}.line:nth-child(2)>span{animation-delay:.34s}.line:nth-child(3)>span{animation-delay:.46s}
+@keyframes rise{to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.hero-sub{max-width:46ch;margin:30px 0 0;font-size:clamp(16px,1.6vw,19px);color:rgba(20,23,20,.82);
+  animation:fadeUp .9s var(--ease) .7s both}
+.hero-sub b{color:var(--soil);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px;animation:fadeUp .9s var(--ease) .84s both}
+.hero-note{position:absolute;right:6vw;bottom:15vh;z-index:2;font-family:var(--hand);font-size:clamp(20px,2.2vw,29px);
+  color:#FFF7E6;transform:rotate(-4deg);text-shadow:0 2px 18px rgba(20,23,20,.55);max-width:230px;line-height:1.25;
+  animation:fadeUp 1s var(--ease) 1.2s both}
+.hero-note::after{content:"";display:block;width:70px;height:1.6px;background:#FFF7E6;margin-top:6px;opacity:.7}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 34px;margin-top:54px;padding-top:20px;
+  border-top:1px solid rgba(27,51,36,.25);font-size:12px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(27,51,36,.75);animation:fadeUp .9s var(--ease) 1s both}
+.scroll-cue{position:absolute;left:var(--pad);bottom:26px;z-index:3;display:flex;align-items:center;gap:10px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(27,51,36,.7);
+  animation:fadeUp 1s var(--ease) 1.3s both}
+.scroll-cue i{width:1.6px;height:44px;background:var(--pine);position:relative;overflow:hidden;display:block}
+.scroll-cue i::after{content:"";position:absolute;inset:0;background:var(--sun);animation:drip 1.8s var(--ease) infinite}
+@keyframes drip{0%{transform:translateY(-100%)}55%{transform:translateY(0)}100%{transform:translateY(100%)}}
+
+.stamp{width:112px;height:112px;position:absolute;z-index:3;opacity:.95;pointer-events:none}
+.stamp text{font-family:var(--sans);font-weight:700;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;fill:currentColor}
+.stamp .stamp-core{font-family:var(--serif);font-style:italic;font-size:30px;fill:currentColor;letter-spacing:0}
+
+/* ============ marquee ============ */
+.marquee-wrap{background:var(--pine);transform:rotate(-.9deg);margin:-30px -20px -8px;
+  position:relative;z-index:4;box-shadow:0 18px 40px -22px rgba(20,38,27,.5)}
+.marquee{overflow:hidden;border-top:1px solid rgba(245,241,231,.2);border-bottom:1px solid rgba(245,241,231,.2)}
+.marquee-track{display:flex;width:max-content;animation:slide 48s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-chunk{display:flex;align-items:center;white-space:nowrap;padding:17px 0}
+.marquee-chunk span{font-family:var(--serif);font-style:italic;font-weight:560;font-size:clamp(17px,2vw,23px);
+  color:var(--paper);padding:0 26px;position:relative}
+.marquee-chunk span::after{content:"";position:absolute;right:-4px;top:50%;width:8px;height:8px;border-radius:50%;
+  background:var(--sun);transform:translateY(-50%)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ============ base sections ============ */
+.sec{position:relative;padding:clamp(96px,11vw,172px) var(--pad)}
+.sec-inner{max-width:1360px;margin:0 auto;position:relative}
+.sec-head{display:flex;align-items:center;gap:22px;margin-bottom:clamp(44px,6vw,84px)}
+.sec-num{font-family:var(--serif);font-weight:900;font-size:clamp(58px,7vw,96px);line-height:1;
+  color:transparent;-webkit-text-stroke:1.6px var(--soil);letter-spacing:-.02em}
+.sec-rule{flex:1;height:1px;background:var(--line);position:relative}
+.sec-rule::before{content:"";position:absolute;left:0;top:-3px;width:56px;height:7px;background:var(--sun);border-radius:4px}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--soil);display:block}
+h2.display{font-family:var(--serif);font-optical-sizing:auto;font-variation-settings:'opsz' 144,'WONK' 1;
+  font-weight:620;font-size:clamp(38px,5.6vw,76px);line-height:1.02;letter-spacing:-.025em;color:var(--pine)}
+h2.display em{font-style:italic;color:var(--soil)}
+
+[data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+[data-reveal].in-view{opacity:1;transform:none}
+
+/* ============ 01 cenário ============ */
+.sec-cenario{background:var(--paper)}
+.cenario-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:start}
+.stat-hero{grid-column:1/7}
+.stat-hero .big{font-family:var(--serif);font-weight:900;font-size:clamp(88px,13vw,196px);line-height:.88;
+  letter-spacing:-.045em;color:var(--pine);font-variation-settings:'opsz' 144}
+.stat-hero .big sup{font-size:.38em;color:var(--soil);font-weight:700;letter-spacing:0;vertical-align:super}
+.stat-hero .cap{font-size:clamp(17px,1.7vw,21px);max-width:36ch;margin-top:18px;color:rgba(20,23,20,.85)}
+.stat-side{grid-column:7/11;margin-top:clamp(30px,6vw,110px)}
+.stat{padding:22px 0;border-top:1px solid var(--line)}
+.stat:last-child{border-bottom:1px solid var(--line)}
+.stat .n{font-family:var(--serif);font-weight:700;font-size:clamp(38px,4vw,58px);letter-spacing:-.03em;color:var(--soil);line-height:1}
+.stat .n small{font-size:.42em;font-family:var(--hand);color:var(--ink);letter-spacing:0;font-weight:500}
+.stat p{font-size:14.5px;color:rgba(20,23,20,.72);margin-top:4px}
+.cenario-photo{grid-column:8/13;grid-row:2;margin-top:clamp(-40px,-4vw,-90px);position:relative;z-index:2;transform:rotate(1.6deg)}
+.cenario-note{grid-column:1/7;grid-row:2;margin-top:clamp(40px,5vw,80px);padding-right:clamp(0px,6vw,90px)}
+.field-note{font-family:var(--hand);font-size:clamp(19px,1.9vw,25px);color:var(--soil);transform:rotate(-1.6deg);line-height:1.3}
+.cenario-note p{margin-top:16px;max-width:52ch;color:rgba(20,23,20,.8)}
+.photo-frame{background:#FFFDF7;border:1px solid var(--line);padding:12px 12px 14px;
+  box-shadow:0 26px 50px -30px rgba(20,23,20,.45),0 4px 14px -8px rgba(20,23,20,.2)}
+.photo-frame .ph{overflow:hidden;background:var(--paper-2)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform 1.1s var(--ease)}
+.photo-frame:hover img{transform:scale(1.045)}
+.photo-frame figcaption{font-family:var(--hand);font-size:19px;color:rgba(20,23,20,.75);padding-top:10px;display:flex;justify-content:space-between;gap:10px}
+.photo-frame figcaption i{font-style:normal;color:var(--soil)}
+
+/* ============ 02 como funciona ============ */
+.sec-como{background:var(--paper-2)}
+.step-band{margin:0 0 clamp(60px,8vw,110px)}
+.step-tag{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--paper);background:var(--pine);padding:7px 16px;border-radius:999px;margin-bottom:22px}
+.step-tag b{color:var(--sun)}
+.step-band h3{font-family:var(--serif);font-variation-settings:'opsz' 144,'WONK' 1;font-weight:600;
+  font-size:clamp(34px,5.4vw,74px);line-height:1.05;letter-spacing:-.025em;color:var(--pine);max-width:22ch}
+.step-band h3 u{text-decoration:none;position:relative;white-space:nowrap}
+.step-band h3 u svg{position:absolute;left:0;bottom:-.18em;width:100%;height:.34em;overflow:visible}
+.step-band .aside{font-family:var(--hand);font-size:clamp(19px,2vw,26px);color:var(--soil);transform:rotate(-2deg);
+  margin-top:20px;display:inline-block}
+
+.step-row{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:clamp(64px,8vw,110px);align-items:center}
+.step-row:last-child{margin-bottom:0}
+.kraft-card{position:relative;background:var(--kraft) url('https://static.prod-images.emergentagent.com/jobs/2fd5d816-6a21-4811-aaf1-58ec4ba60328/images/19394471fc506b069cce63f1bbd7dd5e83414284ea8b624e23bc82de2852d78b.jpeg') center/cover;
+  padding:clamp(30px,3.6vw,52px);transform:rotate(-1.2deg);
+  border:1px solid rgba(20,23,20,.2);box-shadow:0 30px 56px -32px rgba(20,23,20,.5)}
+.kraft-card::before{content:"";position:absolute;inset:0;background:rgba(245,241,231,.9);border:1px dashed rgba(20,23,20,.25);margin:10px}
+.kraft-card>*{position:relative;z-index:1}
+.kraft-card h4{font-family:var(--serif);font-weight:700;font-size:clamp(24px,2.4vw,34px);color:var(--pine);letter-spacing:-.01em}
+.kraft-card p{margin-top:12px;color:rgba(20,23,20,.82);max-width:44ch}
+.kraft-card .field-note{display:block;margin-top:18px}
+.step-02{grid-column:1/7}
+.step-02-txt{grid-column:8/13}
+.step-03-photo{grid-column:6/11;grid-row:1;margin-top:-30px}
+.step-03-txt{grid-column:1/5;grid-row:1;z-index:2}
+.step-03-txt .stamp-box{display:inline-block;border:1.6px solid var(--soil);color:var(--soil);padding:8px 14px;
+  font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;transform:rotate(-2deg);margin-bottom:18px;border-radius:3px}
+.step-03-txt h4,.step-02-txt h4{font-family:var(--serif);font-weight:640;font-size:clamp(26px,2.8vw,40px);
+  color:var(--pine);letter-spacing:-.02em;line-height:1.1}
+.step-03-txt p,.step-02-txt p,.step-04 p{margin-top:14px;color:rgba(20,23,20,.8);max-width:42ch}
+.step-04{grid-column:1/10}
+.step-04 ul{list-style:none;margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 34px}
+.step-04 li{display:flex;gap:14px;align-items:flex-start;font-size:16.5px;color:rgba(20,23,20,.85);padding:12px 16px;
+  background:rgba(255,253,247,.75);border:1px solid var(--line);border-radius:12px}
+.step-04 li svg{flex:none;margin-top:3px}
+.step-04 li:nth-child(odd){transform:rotate(-.5deg)}
+.step-04 li:nth-child(even){transform:rotate(.5deg)}
+.num-ghost{font-family:var(--serif);font-weight:900;font-size:clamp(64px,7vw,110px);line-height:1;
+  color:transparent;-webkit-text-stroke:1.4px rgba(193,96,46,.55);display:block;margin-bottom:14px}
+
+/* ============ 03 mapa ============ */
+.sec-mapa{background:var(--paper)}
+.mapa-grid{display:grid;grid-template-columns:7fr 5fr;gap:clamp(28px,4vw,64px);align-items:stretch}
+.map-board{position:relative;background:#FFFDF7;border:1px solid var(--line);border-radius:6px;padding:clamp(10px,1.6vw,22px);
+  box-shadow:0 34px 60px -38px rgba(20,23,20,.5)}
+.map-board svg{width:100%;height:auto;display:block}
+.pin{position:absolute;width:34px;height:34px;transform:translate(-50%,-50%);border-radius:50%;
+  display:grid;place-items:center;z-index:3}
+.pin i{width:13px;height:13px;border-radius:50%;background:var(--soil);border:2px solid #FFFDF7;
+  box-shadow:0 2px 8px rgba(20,23,20,.35);transition:transform .3s var(--ease),background .3s}
+.pin::after{content:"";position:absolute;inset:2px;border-radius:50%;border:1.6px solid var(--soil);opacity:0;
+  animation:pulse 2.6s var(--ease) infinite}
+.pin[aria-pressed="true"] i{background:var(--sun);transform:scale(1.35)}
+.pin[aria-pressed="true"]::after{opacity:.8}
+.pin:hover i{transform:scale(1.3)}
+@keyframes pulse{0%{transform:scale(.7);opacity:.9}70%{transform:scale(1.9);opacity:0}100%{opacity:0}}
+.pin .pin-label{position:absolute;left:50%;top:-34px;transform:translateX(-50%);font-family:var(--hand);
+  font-size:19px;color:var(--pine);white-space:nowrap;opacity:0;transition:opacity .3s}
+.pin:hover .pin-label,.pin[aria-pressed="true"] .pin-label{opacity:1}
+.mapa-side{display:flex;flex-direction:column;gap:20px}
+.horta-panel{background:var(--pine);color:var(--paper);border-radius:6px;padding:clamp(26px,3vw,44px);
+  flex:1;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.horta-panel::after{content:"";position:absolute;right:-40px;top:-40px;width:170px;height:170px;border:1px dashed rgba(230,178,61,.4);border-radius:50%}
+.horta-panel .k{font-size:11.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--sun)}
+.horta-panel h4{font-family:var(--serif);font-weight:640;font-size:clamp(26px,2.6vw,38px);letter-spacing:-.02em;margin-top:10px}
+.horta-panel dl{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin-top:26px}
+.horta-panel dt{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,241,231,.6)}
+.horta-panel dd{font-family:var(--serif);font-size:21px;font-weight:600;margin-top:2px}
+.horta-panel .crops{font-family:var(--hand);font-size:21px;color:var(--kraft);margin-top:auto;padding-top:26px;transform:rotate(-1.2deg)}
+.horta-panel.fading{animation:panelIn .5s var(--ease)}
+@keyframes panelIn{from{opacity:.35;transform:translateY(8px)}to{opacity:1;transform:none}}
+.mapa-photo{transform:rotate(-1.4deg)}
+.mapa-photo .photo-frame img{aspect-ratio:16/10}
+
+/* ============ 04 depoimento ============ */
+.sec-voz{background:var(--pine);color:var(--paper)}
+.sec-voz .sec-num{-webkit-text-stroke-color:rgba(230,178,61,.8)}
+.sec-voz .sec-rule{background:rgba(245,241,231,.2)}
+.voz-grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(30px,5vw,80px);align-items:center}
+.voz-photo{position:relative;transform:rotate(-2deg);max-width:430px;justify-self:start}
+.voz-photo .photo-frame{background:var(--kraft)}
+.voz-photo img{aspect-ratio:4/5}
+.voz-photo .stamp{right:-34px;bottom:-30px;color:var(--sun);animation:fadeUp 1s var(--ease) .5s both}
+blockquote.voz-quote{font-family:var(--serif);font-style:italic;font-variation-settings:'opsz' 144,'SOFT' 70;
+  font-weight:480;font-size:clamp(28px,3.6vw,52px);line-height:1.16;letter-spacing:-.015em}
+blockquote.voz-quote strong{color:var(--sun);font-weight:560}
+.voz-by{margin-top:34px;display:flex;align-items:center;gap:18px}
+.voz-by .bar{width:52px;height:2px;background:var(--soil)}
+.voz-by .who b{font-weight:600;font-size:17px;letter-spacing:.01em}
+.voz-by .who span{display:block;font-family:var(--hand);font-size:20px;color:var(--kraft);margin-top:2px}
+.voz-note{font-family:var(--hand);font-size:22px;color:var(--sun);transform:rotate(-2.4deg);display:inline-block;margin-bottom:26px}
+
+/* ============ 05 participar ============ */
+.sec-participar{background:var(--paper)}
+.part-grid{display:grid;grid-template-columns:6fr 6fr;gap:clamp(30px,5vw,80px);align-items:start}
+.part-info p{max-width:44ch;margin-top:20px;color:rgba(20,23,20,.82)}
+.part-list{list-style:none;margin-top:30px;display:flex;flex-direction:column}
+.part-list li{display:flex;gap:16px;align-items:baseline;padding:16px 4px;border-top:1px solid var(--line);font-size:16.5px}
+.part-list li:last-child{border-bottom:1px solid var(--line)}
+.part-list .when{font-family:var(--serif);font-weight:700;color:var(--soil);font-size:18px;flex:none;width:118px}
+.part-photo{margin-top:44px;transform:rotate(1.4deg);max-width:420px}
+.form-card{background:#FFFDF7;border:1px solid var(--line);border-radius:8px;padding:clamp(28px,3.4vw,52px);
+  box-shadow:0 40px 70px -42px rgba(20,23,20,.55);position:relative}
+.form-card::before{content:"inscrição · mutirão nº 12";position:absolute;top:-15px;left:36px;background:var(--sun);
+  color:var(--pine);font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  padding:7px 16px;border-radius:3px;transform:rotate(-1.6deg);box-shadow:0 8px 18px -8px rgba(20,23,20,.4)}
+.form-card h3{font-family:var(--serif);font-weight:640;font-size:clamp(24px,2.4vw,34px);color:var(--pine);letter-spacing:-.02em}
+.form-card .lead{font-size:15px;color:rgba(20,23,20,.7);margin:8px 0 30px}
+.f-row{margin-bottom:24px}
+.f-row label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(20,23,20,.65);margin-bottom:8px}
+.f-row input,.f-row select{width:100%;background:transparent;border:0;border-bottom:1.6px solid rgba(20,23,20,.3);
+  padding:10px 2px;font:inherit;font-size:17px;color:var(--ink);border-radius:0;
+  transition:border-color .3s,background .3s}
+.f-row select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23C1602E' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center}
+.f-row input:focus,.f-row select:focus{outline:none;border-color:var(--soil);background:rgba(193,96,46,.05)}
+.f-row input::placeholder{color:rgba(20,23,20,.35)}
+.f-2col{display:grid;grid-template-columns:1fr 1fr;gap:0 26px}
+.radios{display:flex;flex-wrap:wrap;gap:10px}
+.radios input{position:absolute;opacity:0;width:0;height:0}
+.radios label{display:inline-block;font-size:13.5px;font-weight:600;letter-spacing:.02em;text-transform:none;
+  border:1.4px solid rgba(27,51,36,.35);border-radius:999px;padding:9px 18px;cursor:pointer;
+  transition:all .3s var(--ease);margin:0}
+.radios label:hover{border-color:var(--pine);transform:translateY(-1px)}
+.radios input:checked+label{background:var(--pine);border-color:var(--pine);color:var(--paper)}
+.radios input:focus-visible+label{outline:2px dashed var(--soil);outline-offset:3px}
+.form-card .btn{width:100%;justify-content:center;margin-top:8px;font-size:15.5px}
+.form-fine{font-family:var(--hand);font-size:18px;color:rgba(20,23,20,.6);text-align:center;margin-top:16px}
+.sucesso{display:flex;flex-direction:column;align-items:flex-start;gap:8px;border:1.6px dashed var(--soil);
+  border-radius:8px;padding:clamp(28px,3vw,44px);background:rgba(230,178,61,.09)}
+.sucesso svg{width:64px;height:64px}
+.sucesso .ring{stroke:var(--sun);stroke-width:2.4;fill:none;stroke-dasharray:170;stroke-dashoffset:170;animation:draw 1s var(--ease) .1s forwards}
+.sucesso .tick{stroke:var(--pine);stroke-width:3.4;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:60;stroke-dashoffset:60;animation:draw .7s var(--ease) .75s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sucesso h3{font-family:var(--serif);font-weight:640;font-size:clamp(26px,2.6vw,36px);color:var(--pine);margin-top:14px}
+.sucesso p{color:rgba(20,23,20,.8);max-width:40ch}
+.sucesso .again{margin-top:14px;font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:4px;color:var(--soil)}
+
+/* ============ footer ============ */
+footer{background:var(--pine-deep);color:var(--paper);padding:clamp(60px,7vw,100px) var(--pad) 40px}
+.foot-grid{max-width:1360px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+.foot-brand b{font-family:var(--serif);font-weight:700;font-size:30px;letter-spacing:-.02em}
+.foot-brand .coords{font-family:var(--hand);font-size:21px;color:var(--kraft);margin-top:10px;transform:rotate(-1.6deg);display:inline-block}
+.foot-brand p{margin-top:16px;max-width:34ch;color:rgba(245,241,231,.65);font-size:14.5px}
+footer h5{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--sun);margin-bottom:18px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+footer ul a{text-decoration:none;color:rgba(245,241,231,.8);font-size:15px;transition:color .3s}
+footer ul a:hover{color:var(--sun)}
+.colophon{max-width:1360px;margin:0 auto;display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between;
+  border-top:1px solid rgba(245,241,231,.16);margin-top:60px;padding-top:24px;
+  font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,241,231,.5)}
+.colophon a{color:var(--kraft);text-decoration:none}
+.colophon a:hover{color:var(--sun)}
+
+/* grau frio leve nas fotos */
+.hero-photo::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:rgba(126,158,204,.14);mix-blend-mode:multiply}
+.photo-frame .ph{position:relative}
+.photo-frame .ph::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:rgba(126,158,204,.13);mix-blend-mode:multiply}
+.hero-photo img,.photo-frame img{filter:saturate(.9)}
+
+/* toques humanos */
+.photo-frame{position:relative}
+.photo-frame::before{content:"";position:absolute;top:-13px;left:26px;width:88px;height:24px;z-index:2;
+  background:rgba(230,178,61,.5);transform:rotate(-4deg);
+  border-inline:1px dashed rgba(20,23,20,.18);box-shadow:0 2px 6px rgba(20,23,20,.14)}
+.cenario-note{position:relative}
+.coffee{position:absolute;width:104px;height:104px;border-radius:50%;pointer-events:none;
+  border:8px solid rgba(122,82,38,.13);filter:blur(.4px);transform:rotate(6deg) scaleY(.92)}
+.form-card .coffee{right:-56px;bottom:-56px}
+
+/* ============ responsivo ============ */
+@media (max-width:1000px){
+  .cenario-grid{grid-template-columns:1fr 1fr}
+  .stat-hero{grid-column:1/3}
+  .stat-side{grid-column:1/2;margin-top:10px}
+  .cenario-photo{grid-column:2/3;grid-row:2;margin-top:10px;align-self:start}
+  .cenario-note{grid-column:1/3;grid-row:3;margin-top:26px;padding-right:0}
+  .step-02{grid-column:1/13}.step-02-txt{grid-column:1/13;margin-top:10px}
+  .step-03-txt{grid-column:1/13;grid-row:auto}.step-03-photo{grid-column:1/13;grid-row:auto;margin-top:0}
+  .step-04{grid-column:1/13}
+  .step-04 ul{grid-template-columns:1fr}
+  .mapa-grid{grid-template-columns:1fr}
+  .voz-grid{grid-template-columns:1fr}
+  .voz-photo{justify-self:center}
+  .part-grid{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:800px){
+  .topnav{display:none}
+  .nav-toggle{display:block}
+  .hero-inner{padding-bottom:90px}
+  .hero h1{font-size:clamp(52px,15.5vw,88px);max-width:100%}
+  .hero-veil{background:linear-gradient(to top,rgba(20,38,27,.94) 6%,rgba(20,38,27,.55) 46%,rgba(20,38,27,.18) 78%),
+    linear-gradient(97deg,rgba(245,241,231,.9) 0%,rgba(245,241,231,.55) 30%,rgba(245,241,231,0) 60%)}
+  .hero h1{color:var(--paper)}
+  .hero h1 em{color:var(--sun)}
+  .hero-sub{color:rgba(245,241,231,.9)}
+  .hero-kicker{color:var(--paper);border-color:rgba(245,241,231,.5);background:rgba(20,38,27,.35)}
+  .hero-meta{color:rgba(245,241,231,.75);border-color:rgba(245,241,231,.3)}
+  .btn-ghost{color:var(--paper);border-color:rgba(245,241,231,.55)}
+  .btn-ghost:hover{background:var(--paper);color:var(--pine)}
+  .hero-note{right:18px;left:auto;bottom:auto;top:88px;max-width:180px;font-size:19px;text-align:right}
+  .scroll-cue{display:none}
+  .cenario-grid{grid-template-columns:1fr}
+  .stat-hero,.stat-side,.cenario-photo,.cenario-note{grid-column:1/2}
+  .cenario-photo{grid-row:auto;margin-top:34px}
+  .cenario-note{grid-row:auto}
+  .f-2col{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .marquee-wrap{margin-top:-14px}
+}
+@media (max-width:560px){
+  .stamp{display:none}
+  .voz-photo .stamp{display:block;width:92px;height:92px;right:-14px;bottom:-24px}
+}
+
+/* ============ movimento reduzido ============ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .line>span{transform:none;animation:none}
+  [data-reveal]{opacity:1;transform:none}
+  .hero-photo img{transform:scale(1.02);animation:none}
+  .marquee-track{animation:none;transform:none}
+  .marquee{overflow-x:auto}
+  .pin::after{animation:none;opacity:.5}
+  .scroll-cue i::after{animation:none}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<a class="skip-link" href="#hero" data-testid="skip-link">Pular para o conteúdo</a>
+
+<header class="topbar">
+  <a class="brand" href="#hero" data-testid="header-logo">
+    <b>Raiz&nbsp;Coletiva</b><span class="ed">ed. nº4</span>
+  </a>
+  <nav class="topnav" aria-label="Navegação principal">
+    <a href="#cenario" data-testid="nav-link-scenario">O cenário</a>
+    <a href="#como" data-testid="nav-link-how-it-works">Como funciona</a>
+    <a href="#mapa" data-testid="nav-link-map">Onde plantamos</a>
+    <a href="#depoimento" data-testid="nav-link-testimonial">Voz do território</a>
+    <a href="#participar" class="btn" data-testid="nav-link-participate">Participar do mutirão
+      <svg width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M1 6h12M9 1.5L13.5 6 9 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </nav>
+  <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-testid="mobile-menu-toggle">
+    <span></span><span></span>
+  </button>
+</header>
+
+<nav class="menu" id="menu" aria-label="Menu móvel">
+  <a href="#cenario" data-testid="menu-link-scenario"><small>01</small> O cenário</a>
+  <a href="#como" data-testid="menu-link-how-it-works"><small>02</small> Como funciona</a>
+  <a href="#mapa" data-testid="menu-link-map"><small>03</small> Onde plantamos</a>
+  <a href="#depoimento" data-testid="menu-link-testimonial"><small>04</small> Voz do território</a>
+  <a href="#participar" data-testid="menu-link-participate"><small>05</small> Participar</a>
+  <p class="menu-foot">caderno de campo · zona leste, são paulo</p>
+</nav>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero" aria-label="Apresentação">
+  <div class="hero-photo" aria-hidden="false">
+    <img src="https://static.prod-images.emergentagent.com/jobs/2fd5d816-6a21-4811-aaf1-58ec4ba60328/images/24a9413e011628a68c1e63832833d7c3af36607ca78b42e65b65b0a5929b1c5c.jpeg"
+         alt="Vizinhos plantando uma muda em canteiro na calçada de uma rua da Zona Leste, na luz dourada de fim de tarde" width="1264" height="848" fetchpriority="high">
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <p class="hero-kicker"><i aria-hidden="true"></i>Caderno de campo · Nº4 — Zona Leste, São Paulo</p>
+    <h1>
+      <span class="line"><span>A cidade</span></span>
+      <span class="line"><span>se planta</span></span>
+      <span class="line"><span>com <em>as&nbsp;mãos.</em></span></span>
+    </h1>
+    <p class="hero-sub">Somos um coletivo de vizinhos transformando <b>terrenos esquecidos</b> em hortas, quintais e sombra. Sem obra faraônica — um mutirão por vez, desde 2021.</p>
+    <div class="hero-cta">
+      <a href="#participar" class="btn" data-testid="hero-cta-button">Quero participar
+        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M1 6h12M9 1.5L13.5 6 9 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#mapa" class="btn btn-ghost" data-testid="hero-secondary-cta">Ver o mapa das hortas</a>
+    </div>
+    <div class="hero-meta">
+      <span>desde 2021</span><span>370 vizinhos na roça</span><span>12 hortas ativas</span><span>−23.5477, −46.4612</span>
+    </div>
+  </div>
+
+  <p class="hero-note" aria-hidden="true">mutirão de domingo, 7h da manhã — aparece!</p>
+
+  <svg class="stamp" style="top:96px;right:5vw;color:#FFF7E6" viewBox="0 0 120 120" aria-hidden="true">
+    <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+    <circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 4"/>
+    <text><textPath href="#circ">MUTIRÃO APROVADO · PELA COMUNIDADE ·</textPath></text>
+    <text class="stamp-core" x="60" y="71" text-anchor="middle">nº4</text>
+  </svg>
+
+  <div class="scroll-cue" aria-hidden="true"><i></i>role para ler</div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee-wrap" aria-hidden="true" data-testid="editorial-marquee">
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="marquee-chunk">
+        <span>mutirões aos domingos</span><span>hortas comunitárias</span><span>reflorestamento de quintal</span>
+        <span>composteira de rua</span><span>zona leste, são paulo</span><span>unidades pela terra</span>
+      </div>
+      <div class="marquee-chunk" aria-hidden="true">
+        <span>mutirões aos domingos</span><span>hortas comunitárias</span><span>reflorestamento de quintal</span>
+        <span>composteira de rua</span><span>zona leste, são paulo</span><span>unidades pela terra</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 01 CENÁRIO ================= -->
+<section class="sec sec-cenario" id="cenario" aria-label="O cenário">
+  <div class="sec-inner">
+    <div class="sec-head" data-reveal>
+      <span class="sec-num" aria-hidden="true">01</span>
+      <span class="sec-rule" aria-hidden="true"></span>
+      <span class="kicker">O cenário</span>
+    </div>
+
+    <div class="cenario-grid">
+      <div class="stat-hero" data-reveal data-testid="stat-card-area">
+        <p class="big"><span data-count="4800">4.800</span><sup>m²</sup></p>
+        <p class="cap">de terra improdutiva recuperada em cinco anos — lotes vagos, canteiros mortos e muros cegos que viraram comida, sombra e encontro.</p>
+      </div>
+
+      <div class="stat-side" data-reveal style="--d:.15s">
+        <div class="stat"><p class="n"><span data-count="840">840</span> <small>kg</small></p><p>de alimentos colhidos e distribuídos na vizinhança só na última safra</p></div>
+        <div class="stat"><p class="n"><span data-count="12">12</span> <small>hortas</small></p><p>ativas em quatro bairros, todas com rega escalonada e calendário aberto</p></div>
+        <div class="stat"><p class="n"><span data-count="370">370</span> <small>mãos</small></p><p>voluntários recorrentes — a maioria mora a duas quadras de uma horta</p></div>
+      </div>
+
+      <figure class="cenario-photo" data-reveal style="--d:.25s">
+        <div class="photo-frame">
+          <div class="ph"><img src="https://static.prod-images.emergentagent.com/jobs/2fd5d816-6a21-4811-aaf1-58ec4ba60328/images/dadd3909c46cefd3b45b9e4cd10df9eb88633645fedb898cc5ee289c91c81070.jpeg"
+            alt="Canteiro com mudas recém-plantadas e regador de metal enferrujado ao lado" loading="lazy" width="1264" height="848"></div>
+          <figcaption><span>canteiro novo, estrada do sapé</span><i>→ nov/24, só falta o sol</i></figcaption>
+        </div>
+      </figure>
+
+      <div class="cenario-note" data-reveal style="--d:.2s">
+        <span class="coffee" style="top:-58px;right:8px" aria-hidden="true"></span>
+        <p class="field-note" aria-hidden="true">“o lote da esquina levou 3 domingos pra virar canteiro. ninguém acreditou até a primeira couve.”</p>
+        <p>A Zona Leste perde área verde mais rápido do que qualquer outra região da cidade — e é onde mora a maior parte de quem trabalha na alimentação de São Paulo. A gente começou porque o problema estava literalmente do lado de casa: um terreno baldio, mato alto, pneu no meio. Hoje é horta, sombra e ponto de encontro. O resto do bairro só precisava de permissão — e de mãos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 COMO FUNCIONA ================= -->
+<section class="sec sec-como" id="como" aria-label="Como funciona">
+  <div class="sec-inner">
+    <div class="sec-head" data-reveal>
+      <span class="sec-num" aria-hidden="true">02</span>
+      <span class="sec-rule" aria-hidden="true"></span>
+      <span class="kicker">Como funciona</span>
+    </div>
+
+    <div class="step-band" data-reveal>
+      <p class="step-tag"><b>passo 1</b> escuta</p>
+      <h3>Nada é plantado antes de a rua <u>contar como quer<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 60 6, 120 18, 170 10 S 270 8, 296 12" fill="none" stroke="#C1602E" stroke-width="4" stroke-linecap="round"/></svg></u> o espaço.</h3>
+      <span class="aside" aria-hidden="true">→ primeira regra do caderno: quem mora no entorno manda.</span>
+    </div>
+
+    <div class="step-row">
+      <div class="kraft-card step-02" data-reveal>
+        <h4>Mapeamos os espaços mortos</h4>
+        <p>Com caderno e trena: lotes vagos, canteiros abandonados, faixas de distribuição subaproveitadas. Cada ponto vira uma ficha com dono, medida e potencial.</p>
+        <span class="field-note" aria-hidden="true">mapear = conversar com quem mora ali, sempre.</span>
+      </div>
+      <div class="step-02-txt" data-reveal style="--d:.15s">
+        <span class="num-ghost" aria-hidden="true">2</span>
+        <p class="step-tag" style="background:transparent;color:var(--soil);padding:0"><b>passo 2</b> mapeamento</p>
+        <h4>Cada terreno vira uma ficha de campo</h4>
+        <p>Somente áreas públicas ou cedidas por acordo de vizinhança, sempre com uso coletivo garantido por escrito à moda antiga: assinado, testemunhado e afixado no muro.</p>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-03-txt" data-reveal>
+        <span class="stamp-box">passo 3 · plantio</span>
+        <span class="num-ghost" aria-hidden="true">3</span>
+        <h4>Mutirão de plantio, um domingo por mês</h4>
+        <p>Cavar, adubar com o composto da própria rua, plantar e fechar com almoço coletivo. Quem chega sozinho vai embora com tarefa, turma e mudinha.</p>
+      </div>
+      <figure class="step-03-photo" data-reveal style="--d:.15s">
+        <div class="photo-frame">
+          <div class="ph"><img src="https://static.prod-images.emergentagent.com/jobs/2fd5d816-6a21-4811-aaf1-58ec4ba60328/images/4ce5a003f3fd956471c7dee1dab8efa527832db9ebc852aeadffdcc0e6791baa.jpeg"
+            alt="Muda jovem plantada em canteiro de pneus reaproveitados pintados" loading="lazy" width="1024" height="1024"></div>
+          <figcaption><span>canteiro de pneus, horta do campo dentro</span><i>itaquera</i></figcaption>
+        </div>
+      </figure>
+    </div>
+
+    <div class="step-row">
+      <div class="step-04" data-reveal>
+        <p class="step-tag"><b>passo 4</b> cuidado</p>
+        <span class="num-ghost" aria-hidden="true">4</span>
+        <h4 style="font-family:var(--serif);font-weight:640;font-size:clamp(26px,2.8vw,40px);color:var(--pine);letter-spacing:-.02em">O cuidado continua na segunda-feira</h4>
+        <p style="margin-top:14px;max-width:46ch;color:rgba(20,23,20,.8)">Plantar é a parte fácil. O que mantém uma horta viva é rotina de bairro — então a gente desenha o cuidado junto com quem mora ao lado:</p>
+        <ul data-testid="care-checklist">
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="17" height="17" rx="5" stroke="#C1602E" stroke-width="1.8"/><path d="M5.5 10.5l3 3 6-7" stroke="#1B3324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>rega escalonada em vez de mangueira</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="17" height="17" rx="5" stroke="#C1602E" stroke-width="1.8"/><path d="M5.5 10.5l3 3 6-7" stroke="#1B3324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>composteira de rua a cada três quarteirões</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="17" height="17" rx="5" stroke="#C1602E" stroke-width="1.8"/><path d="M5.5 10.5l3 3 6-7" stroke="#1B3324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>bancada de mudas livres na praça</li>
+          <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="17" height="17" rx="5" stroke="#C1602E" stroke-width="1.8"/><path d="M5.5 10.5l3 3 6-7" stroke="#1B3324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>café da manhã pago pelo próprio mutirão</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 MAPA ================= -->
+<section class="sec sec-mapa" id="mapa" aria-label="Onde plantamos">
+  <div class="sec-inner">
+    <div class="sec-head" data-reveal>
+      <span class="sec-num" aria-hidden="true">03</span>
+      <span class="sec-rule" aria-hidden="true"></span>
+      <span class="kicker">Onde plantamos</span>
+    </div>
+
+    <h2 class="display" data-reveal style="max-width:16ch;margin-bottom:clamp(40px,5vw,70px)">Quatro bairros, <em>doze hortas</em>, um só caderno.</h2>
+
+    <div class="mapa-grid">
+      <div class="map-board" data-reveal>
+        <svg viewBox="0 0 900 640" role="img" aria-label="Croqui desenhado à mão da Zona Leste de São Paulo com os bairros Penha, Itaquera, Guaianases, Cidade Tiradentes e São Mateus">
+          <defs>
+            <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-38)">
+              <line x1="0" y1="0" x2="0" y2="7" stroke="#1B3324" stroke-width="1" opacity=".28"/>
+            </pattern>
+          </defs>
+          <!-- rio tiete -->
+          <path d="M-10 540 C 120 520, 200 560, 320 545 S 560 500, 700 525 S 850 560, 910 545" fill="none" stroke="#141714" stroke-width="3" opacity=".3" stroke-linecap="round"/>
+          <path d="M-10 556 C 120 536, 210 574, 330 560 S 570 516, 705 540 S 855 574, 910 560" fill="none" stroke="#141714" stroke-width="1.4" opacity=".2" stroke-linecap="round"/>
+          <!-- linha de trem -->
+          <path d="M-10 470 C 140 452, 300 430, 460 438 S 760 420, 910 402" fill="none" stroke="#C1602E" stroke-width="2.2" stroke-dasharray="9 7" stroke-linecap="round" opacity=".8"/>
+          <!-- vias -->
+          <path d="M150 60 C 200 180, 170 330, 240 470" fill="none" stroke="#141714" stroke-width="1.6" opacity=".22" stroke-linecap="round"/>
+          <path d="M420 40 C 430 200, 380 330, 470 500" fill="none" stroke="#141714" stroke-width="1.6" opacity=".22" stroke-linecap="round"/>
+          <path d="M690 90 C 640 240, 700 380, 640 540" fill="none" stroke="#141714" stroke-width="1.6" opacity=".22" stroke-linecap="round"/>
+          <path d="M60 260 C 260 240, 480 280, 840 240" fill="none" stroke="#141714" stroke-width="1.6" opacity=".22" stroke-linecap="round"/>
+          <!-- bairros (manchas hachuradas irregulares) -->
+          <path d="M210 130 c 40 -28 130 -30 170 2 c 34 26 22 78 -14 100 c -46 28 -130 22 -162 -14 c -24 -28 -18 -66 6 -88 z" fill="url(#hatch)" stroke="#1B3324" stroke-width="2" opacity=".85"/>
+          <path d="M540 180 c 46 -20 120 -8 140 28 c 18 34 -6 76 -48 88 c -50 14 -122 2 -140 -36 c -14 -30 14 -64 48 -80 z" fill="url(#hatch)" stroke="#1B3324" stroke-width="2" opacity=".85"/>
+          <path d="M700 120 c 36 -16 96 -8 110 20 c 12 26 -10 56 -44 62 c -40 8 -92 0 -104 -28 c -10 -24 8 -42 38 -54 z" fill="url(#hatch)" stroke="#1B3324" stroke-width="2" opacity=".85"/>
+          <path d="M560 430 c 44 -22 118 -10 136 26 c 16 34 -12 70 -56 78 c -48 10 -112 -4 -126 -40 c -12 -30 14 -48 46 -64 z" fill="url(#hatch)" stroke="#1B3324" stroke-width="2" opacity=".85"/>
+          <path d="M300 480 c 40 -20 104 -8 120 24 c 14 30 -14 60 -54 66 c -44 8 -98 -6 -110 -38 c -10 -26 14 -36 44 -52 z" fill="url(#hatch)" stroke="#1B3324" stroke-width="2" opacity=".85"/>
+          <!-- rótulos -->
+          <text x="286" y="200" font-family="Caveat, cursive" font-size="34" fill="#1B3324" transform="rotate(-4 286 200)">Penha</text>
+          <text x="600" y="250" font-family="Caveat, cursive" font-size="34" fill="#1B3324" transform="rotate(3 600 250)">Itaquera</text>
+          <text x="740" y="180" font-family="Caveat, cursive" font-size="32" fill="#1B3324" transform="rotate(-5 740 180)">Guaianases</text>
+          <text x="580" y="500" font-family="Caveat, cursive" font-size="30" fill="#1B3324" transform="rotate(2 580 500)">Cid. Tiradentes</text>
+          <text x="330" y="552" font-family="Caveat, cursive" font-size="28" fill="#9E4A1F" transform="rotate(-3 330 552)">São Mateus</text>
+          <text x="120" y="590" font-family="Caveat, cursive" font-size="24" fill="#141714" opacity=".55" transform="rotate(2 120 590)">← rio tietê</text>
+          <text x="60" y="430" font-family="Caveat, cursive" font-size="22" fill="#9E4A1F" opacity=".8" transform="rotate(-4 60 430)">linha 11 · coral</text>
+          <!-- bússola + escala desenhadas -->
+          <g transform="translate(830,560)" stroke="#1B3324" fill="none" stroke-width="2" stroke-linecap="round">
+            <path d="M0 20 V -18 M0 -18 L -7 -2 M0 -18 L 7 -2"/><text x="0" y="38" font-family="Caveat, cursive" font-size="22" fill="#1B3324" stroke="none" text-anchor="middle">N</text>
+          </g>
+          <g transform="translate(70,80)" stroke="#1B3324" fill="none" stroke-width="1.6" stroke-linecap="round" opacity=".6">
+            <path d="M0 0 h120 M0 -6 v12 M60 -4 v8 M120 -6 v12"/>
+            <text x="0" y="26" font-family="Caveat, cursive" font-size="20" fill="#1B3324" stroke="none">~ 1,5 km</text>
+          </g>
+          <text x="895" y="34" text-anchor="end" font-family="Caveat, cursive" font-size="26" fill="#141714" opacity=".7">croqui sem escala — desenhado à mão</text>
+        </svg>
+
+        <button class="pin" style="left:29%;top:26%" data-horta="penha" aria-pressed="true" aria-label="Horta Vila Dalila, na Penha" data-testid="map-pin-penha"><i></i><span class="pin-label">Vila Dalila</span></button>
+        <button class="pin" style="left:62%;top:33%" data-horta="itaquera" aria-pressed="false" aria-label="Horta do Campo Dentro, em Itaquera" data-testid="map-pin-itaquera"><i></i><span class="pin-label">Campo Dentro</span></button>
+        <button class="pin" style="left:82%;top:22%" data-horta="guaianases" aria-pressed="false" aria-label="Canteiro da Ladeira, em Guaianases" data-testid="map-pin-guaianases"><i></i><span class="pin-label">Ladeira</span></button>
+        <button class="pin" style="left:63%;top:76%" data-horta="tiradentes" aria-pressed="false" aria-label="Praça-berço Tiradentes, na Cidade Tiradentes" data-testid="map-pin-tiradentes"><i></i><span class="pin-label">Praça-berço</span></button>
+        <button class="pin" style="left:38%;top:82%" data-horta="mateus" aria-pressed="false" aria-label="Banco de mudas do Sapé, em São Mateus" data-testid="map-pin-mateus"><i></i><span class="pin-label">Sapé</span></button>
+      </div>
+
+      <div class="mapa-side">
+        <div class="horta-panel" id="horta-panel" data-reveal data-testid="horta-panel">
+          <span class="k">horta em atividade · <span id="hp-idx">01/05</span></span>
+          <h4 id="hp-name">Horta Vila Dalila</h4>
+          <dl>
+            <div><dt>desde</dt><dd id="hp-since">2021</dd></div>
+            <div><dt>área</dt><dd id="hp-area">320 m²</dd></div>
+            <div><dt>moradores ativos</dt><dd id="hp-people">34</dd></div>
+            <div><dt>ritmo</dt><dd id="hp-pace">domingos, 8h</dd></div>
+          </dl>
+          <p class="crops" id="hp-crops">crescendo agora: couve, taioba, mamão e mandioca</p>
+        </div>
+
+        <figure class="mapa-photo" data-reveal style="--d:.15s">
+          <div class="photo-frame">
+            <div class="ph"><img src="https://static.prod-images.emergentagent.com/jobs/2fd5d816-6a21-4811-aaf1-58ec4ba60328/images/5b92016fe4bd171ab44f0fc9ef60c6f7eade6b94fbc7d67374e6e9d11b5ca919.jpeg"
+              alt="Rua de bairro da Zona Leste ao fim de tarde, com casas coloridas e árvore frutífera na calçada" loading="lazy" width="1264" height="848"></div>
+            <figcaption><span>rua do fogueteiro, penha</span><i>↑ três hortas nesta quadra</i></figcaption>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 DEPOIMENTO ================= -->
+<section class="sec sec-voz" id="depoimento" aria-label="Voz do território">
+  <div class="sec-inner">
+    <div class="sec-head" data-reveal>
+      <span class="sec-num" aria-hidden="true">04</span>
+      <span class="sec-rule" aria-hidden="true"></span>
+      <span class="kicker" style="color:var(--sun)">Voz do território</span>
+    </div>
+
+    <div class="voz-grid">
+      <figure class="voz-photo" data-reveal>
+        <div class="photo-frame">
+          <div class="ph"><img src="https://static.prod-images.emergentagent.com/jobs/2fd5d816-6a21-4811-aaf1-58ec4ba60328/images/af0c778eadb3c117082bd7cf04060c08421f08d24001ab6197343469fecf915c.jpeg"
+            alt="Quintal da Dona Marlene com cadeira de plástico vazia e plantas em latas reutilizadas" loading="lazy" width="848" height="1264"></div>
+          <figcaption><span>o quintal da marlene</span><i>vila dalila</i></figcaption>
+        </div>
+        <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="circ2" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 4"/>
+          <text><textPath href="#circ2">COM SELO DO COLETIVO · DESDE A PRIMEIRA ·</textPath></text>
+          <text class="stamp-core" x="60" y="71" text-anchor="middle">21</text>
+        </svg>
+      </figure>
+
+      <div data-reveal style="--d:.15s">
+        <span class="voz-note" aria-hidden="true">“cheguei na primeira mutirão de chinelo e sai com enxada alugada.”</span>
+        <blockquote class="voz-quote" data-testid="testimonial-quote">
+          “A terra aqui não é só chão. É memória de quem veio antes — e é <strong>futuro que a gente põe a mão</strong> pra plantar.”
+        </blockquote>
+        <div class="voz-by">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="who">
+            <b>Marlene Aparecida dos Santos, 56</b>
+            <span>moradora da Vila Dalila, Penha — no mutirão desde a primeira domingo, 2021</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 PARTICIPAR ================= -->
+<section class="sec sec-participar" id="participar" aria-label="Participar">
+  <div class="sec-inner">
+    <div class="sec-head" data-reveal>
+      <span class="sec-num" aria-hidden="true">05</span>
+      <span class="sec-rule" aria-hidden="true"></span>
+      <span class="kicker">Participar</span>
+    </div>
+
+    <div class="part-grid">
+      <div class="part-info" data-reveal>
+        <h2 class="display">Coloque as mãos <em>na terra.</em></h2>
+        <p>Não precisa saber nada de planta — precisa querer voltar no domingo seguinte. A gente ensina no canteiro, com as mãos, do jeito que aprendemos.</p>
+        <ul class="part-list">
+          <li><span class="when">quando</span><span>todo último domingo do mês, das 8h às 13h</span></li>
+          <li><span class="when">onde</span><span>cada mês uma horta — o endereço vai no bilhete de confirmação</span></li>
+          <li><span class="when">levar</span><span>água, chapéu e roupa que possa sujar de terra</span></li>
+          <li><span class="when">crianças</span><span>bem-vindas com adulto responsável — regador tem pra todos</span></li>
+        </ul>
+        <figure class="part-photo">
+          <div class="photo-frame">
+            <div class="ph"><img src="https://static.prod-images.emergentagent.com/jobs/2fd5d816-6a21-4811-aaf1-58ec4ba60328/images/d7d413bb72be26aa13f819f70907e7344446d5c83cca61c6eeffed8eda3cf465.jpeg"
+              alt="Regador amarelo e riscado regando uma bandeja de mudas no canteiro" loading="lazy" width="1264" height="848"></div>
+            <figcaption><span>regador das 8h, turno da manhã</span><i>horta vila dalila</i></figcaption>
+          </div>
+        </figure>
+      </div>
+
+      <div class="form-card" data-reveal style="--d:.15s">
+        <span class="coffee" aria-hidden="true"></span>
+        <form id="form-participar" novalidate data-testid="participate-form">
+          <h3>Inscrição para o próximo mutirão</h3>
+          <p class="lead">A gente confirma por mensagem em até dois dias. Sem spam, palavra de vizinho.</p>
+          <div class="f-2col">
+            <div class="f-row">
+              <label for="f-nome">seu nome</label>
+              <input id="f-nome" name="nome" type="text" placeholder="Como te chamam na rua" required autocomplete="name" data-testid="participate-name-input">
+            </div>
+            <div class="f-row">
+              <label for="f-email">e-mail</label>
+              <input id="f-email" name="email" type="email" placeholder="voce@exemplo.com" required autocomplete="email" data-testid="participate-email-input">
+            </div>
+          </div>
+          <div class="f-row">
+            <label for="f-bairro">seu bairro</label>
+            <select id="f-bairro" name="bairro" required data-testid="participate-neighborhood-select">
+              <option value="" selected disabled>Escolha na lista</option>
+              <option>Penha</option><option>Itaquera</option><option>Guaianases</option>
+              <option>Cidade Tiradentes</option><option>São Mateus</option><option>Outro bairro da Zona Leste</option><option>Moro fora da Zona Leste</option>
+            </select>
+          </div>
+          <div class="f-row">
+            <label>como você quer ajudar</label>
+            <div class="radios" role="radiogroup" aria-label="Como você quer ajudar">
+              <input type="radio" name="apoio" id="r-plantar" value="plantar" checked><label for="r-plantar">plantar</label>
+              <input type="radio" name="apoio" id="r-cozinhar" value="cozinhar"><label for="r-cozinhar">cozinhar o almoço</label>
+              <input type="radio" name="apoio" id="r-ensinar" value="ensinar"><label for="r-ensinar">ensinar / aprender</label>
+              <input type="radio" name="apoio" id="r-doar" value="doar"><label for="r-doar">doar mudas ou sementes</label>
+            </div>
+          </div>
+          <button type="submit" class="btn" data-testid="participate-submit-button">Enviar inscrição
+            <svg width="15" height="12" viewBox="0 0 15 12" fill="none" aria-hidden="true"><path d="M1 6h12M9 1.5L13.5 6 9 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-fine" aria-hidden="true">↓ não leva nem dois minutos ↓</p>
+        </form>
+
+        <div class="sucesso" id="sucesso" hidden tabindex="-1" data-testid="participate-success-state">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <circle class="ring" cx="32" cy="32" r="27"/>
+            <path class="tick" d="M20 33.5l8 8 16-19"/>
+          </svg>
+          <h3>Inscrição recebida, vizinho!</h3>
+          <p>Sua muda já tem nome provisório: <b>esperança</b>. A gente te chama por mensagem antes do próximo mutirão com o endereço do canteiro.</p>
+          <button class="again" id="btn-nova-inscricao" data-testid="participate-reset-button">inscrever outra pessoa →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <b>Raiz Coletiva</b><br>
+      <span class="coords">−23.5477, −46.4612 · zona leste, são paulo</span>
+      <p>Coletivo de hortas comunitárias fundado por vizinhos em 2021. Caderno de campo aberto, portão também.</p>
+    </div>
+    <div>
+      <h5>encontre a gente</h5>
+      <ul>
+        <li><a href="#hero" data-testid="footer-instagram">instagram @raizcoletiva</a></li>
+        <li><a href="#hero" data-testid="footer-email">ola@raizcoletiva.org.br</a></li>
+        <li><a href="#participar" data-testid="footer-participate">quero no próximo mutirão</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>o caderno</h5>
+      <ul>
+        <li><a href="#cenario" data-testid="footer-cenario">01 · o cenário</a></li>
+        <li><a href="#como" data-testid="footer-como">02 · como funciona</a></li>
+        <li><a href="#mapa" data-testid="footer-mapa">03 · onde plantamos</a></li>
+        <li><a href="#depoimento" data-testid="footer-depoimento">04 · voz do território</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="colophon">
+    <span>© 2025 raiz coletiva — conteúdo fictício, feito para portfólio</span>
+    <span>ed. nº4 · set in fraunces &amp; work sans · grão de papel à mão</span>
+    <a href="#hero" data-testid="back-to-top">voltar ao topo ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- âncoras suaves ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (!id || id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      closeMenu();
+      el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
+  /* ---- menu mobile ---- */
+  var toggle = document.querySelector('.nav-toggle');
+  var body = document.body;
+  function closeMenu(){
+    body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Abrir menu');
+  }
+  toggle.addEventListener('click', function(){
+    var open = body.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  });
+  document.querySelectorAll('#menu a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeMenu(); });
+
+  /* ---- reveals no scroll ---- */
+  var els = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in-view'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  /* ---- contadores ---- */
+  function fmt(n){ return n.toLocaleString('pt-BR'); }
+  function animateCount(el){
+    var target = parseInt(el.dataset.count, 10);
+    var dur = 1500, start = performance.now();
+    function tick(now){
+      var p = Math.min((now - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(Math.round(target * eased));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var counters = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          if (reduce){ en.target.textContent = fmt(parseInt(en.target.dataset.count, 10)); }
+          else { animateCount(en.target); }
+          cio.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function(el){ cio.observe(el); });
+  }
+
+  /* ---- parallax sutil do hero ---- */
+  var heroImg = document.querySelector('.hero-photo img');
+  if (heroImg && !reduce && 'IntersectionObserver' in window){
+    var ticking = false;
+    window.addEventListener('scroll', function(){
+      if (!ticking){
+        requestAnimationFrame(function(){
+          var y = window.scrollY;
+          if (y < window.innerHeight * 1.2){
+            heroImg.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0) scale(1.02)';
+            heroImg.style.animation = 'none';
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ---- mapa: pins ---- */
+  var hortas = {
+    penha:      { name:'Horta Vila Dalila',     since:'2021', area:'320 m²', people:'34', pace:'domingos, 8h',      crops:'crescendo agora: couve, taioba, mamão e mandioca' },
+    itaquera:   { name:'Horta do Campo Dentro', since:'2022', area:'540 m²', people:'41', pace:'domingos, 8h',      crops:'crescendo agora: mandioca, banana, erva-cidreira' },
+    guaianases: { name:'Canteiro da Ladeira',   since:'2023', area:'180 m²', people:'22', pace:'sábados, 9h',       crops:'crescendo agora: hortaliças, abóbora e mel da caixa' },
+    tiradentes: { name:'Praça-berço Tiradentes',since:'2024', area:'210 m²', people:'18', pace:'último domingo, 8h',crops:'crescendo agora: mudas nativas pra arborizar ruas' },
+    mateus:     { name:'Banco de Mudas do Sapé',since:'2022', area:'150 m²', people:'27', pace:'quartas, 14h',      crops:'crescendo agora: ipês, aroeiras e Pérgola de jasmin' }
+  };
+  var panel = document.getElementById('horta-panel');
+  var pins = document.querySelectorAll('.pin');
+  pins.forEach(function(pin, i){
+    pin.addEventListener('click', function(){
+      pins.forEach(function(p){ p.setAttribute('aria-pressed','false'); });
+      pin.setAttribute('aria-pressed','true');
+      var h = hortas[pin.dataset.horta];
+      if (!h || !panel) return;
+      document.getElementById('hp-name').textContent = h.name;
+      document.getElementById('hp-since').textContent = h.since;
+      document.getElementById('hp-area').textContent = h.area;
+      document.getElementById('hp-people').textContent = h.people;
+      document.getElementById('hp-pace').textContent = h.pace;
+      document.getElementById('hp-crops').textContent = h.crops;
+      document.getElementById('hp-idx').textContent = '0' + (i + 1) + '/05';
+      panel.classList.remove('fading'); void panel.offsetWidth; panel.classList.add('fading');
+    });
+  });
+
+  /* ---- formulário simulado ---- */
+  var form = document.getElementById('form-participar');
+  var ok = document.getElementById('sucesso');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()){ form.reportValidity(); return; }
+    form.hidden = true;
+    ok.hidden = false;
+    ok.focus();
+  });
+  document.getElementById('btn-nova-inscricao').addEventListener('click', function(){
+    ok.hidden = true;
+    form.reset();
+    form.hidden = false;
+    document.getElementById('f-nome').focus();
+  });
+
+  /* ---- nav ativa ---- */
+  var sections = document.querySelectorAll('main section[id]');
+  var navLinks = document.querySelectorAll('.topnav a[href^="#"]');
+  if ('IntersectionObserver' in window){
+    var nio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          navLinks.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id); });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function(s){ nio.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
