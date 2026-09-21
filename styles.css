@@ -176,6 +176,16 @@ h1 em, h2 em { color: var(--accent); font-style: italic; font-weight: 400; }
 .process-item > svg { color: var(--muted-copy); transition: transform 260ms ease, color 260ms ease; }
 .process-item:hover > svg { color: var(--accent); transform: translate(2px, -2px); }
 
+.pricing-list { border-top: 1px solid var(--line); }
+.pricing-item { display: grid; grid-template-columns: 100px 1fr auto; gap: 30px; align-items: center; padding: 26px 0; border-bottom: 1px solid var(--line); transition: padding 260ms ease, background 260ms ease; }
+.pricing-item:hover { padding-left: 13px; background: color-mix(in srgb, var(--soft) 55%, transparent); }
+.pricing-number { color: var(--accent); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .1em; }
+.pricing-item h3 { margin: 0 0 6px; color: var(--ink); font-family: 'Playfair Display', Georgia, serif; font-size: 23px; font-weight: 400; letter-spacing: -.025em; }
+.pricing-item p { margin: 0; max-width: 420px; color: var(--copy); font-size: 13px; line-height: 1.6; }
+.pricing-value { text-align: right; white-space: nowrap; }
+.pricing-value strong { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 27px; font-weight: 400; color: var(--ink); }
+.pricing-value span { display: block; margin-top: 4px; color: var(--muted-copy); font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+
 /* ===== Contato ===== */
 .contact-section { padding: 120px 0 126px; background: var(--accent-deep); color: #f9f8f6; }
 .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(55px, 9vw, 150px); align-items: start; }
@@ -276,6 +286,11 @@ h1 em, h2 em { color: var(--accent); font-style: italic; font-weight: 400; }
   .workspace-result strong { font-size: 37px; }
   .process-item { grid-template-columns: 41px 1fr 18px; gap: 14px; }
   .process-item h3 { font-size: 22px; }
+  .pricing-item { grid-template-columns: 1fr auto; grid-template-areas: "num value" "title value"; gap: 6px 14px; padding: 20px 0; }
+  .pricing-number { grid-area: num; }
+  .pricing-item > div:not(.pricing-value) { grid-area: title; }
+  .pricing-item h3 { font-size: 20px; }
+  .pricing-value strong { font-size: 22px; }
   .contact-copy h2 { font-size: 55px; }
   .footer-top, .footer-bottom { grid-template-columns: 1fr; align-items: start; }
   .footer-bottom span:last-child { text-align: left; }
