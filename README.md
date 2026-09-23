@@ -7,10 +7,9 @@ estrutura, mesmas seções, mesmo texto e as mesmas interações.
 ## Arquivos
 
 - `index.html` — toda a estrutura da página (header, hero, portfólio,
-  serviços, calculadora de orçamento, processo, contato, rodapé e os dois
-  modais: detalhe do projeto e experiência guiada)
-- `styles.css` — todo o visual (cores, tipografia, layout, responsivo)
-- `script.js` — toda a interatividade:
+  preço, serviços, contato, rodapé e os dois)
+  -`styles.css` — todo o visual (cores, tipografia, layout, responsivo)
+  -`script.js` — toda a interatividade:
   - menu mobile
   - alternância de tema claro/escuro
   - animação de revelar ao rolar a página
@@ -27,11 +26,3 @@ Não precisa de nada instalado. Basta abrir `index.html` no navegador, ou
 subir os 3 arquivos em qualquer hospedagem estática (Hostinger, GitHub Pages,
 Netlify, Vercel etc.) — são só arquivos, sem servidor por trás.
 
-## O que ficou de fora
-
-- O backend (FastAPI) e o banco de dados (MongoDB) não são mais necessários:
-  nenhuma funcionalidade real da página dependia deles (o formulário de
-  contato já era só uma simulação com notificação, não enviava nada).
-- Se um dia você quiser que o formulário de contato envie e-mails de
-  verdade, dá pra ligar `script.js` a um serviço tipo Formspree ou EmailJS
-  sem precisar reintroduzir um backend próprio.

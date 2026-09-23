@@ -301,4 +301,9 @@ h1 em, h2 em { color: var(--accent); font-style: italic; font-weight: 400; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
+  .hero-canvas { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hero-canvas { opacity: .55; }
 }
